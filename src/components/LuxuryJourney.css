@@ -1,0 +1,251 @@
+/* ============================================================
+   LUXURY JOURNEY — The Process & Experience
+============================================================ */
+
+.journey-section {
+  background: var(--bg-primary);
+  padding: 10rem 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.journey-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.journey-header {
+  margin-bottom: 8rem;
+  text-align: center;
+}
+
+.journey-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 2rem;
+}
+
+.journey-label::before,
+.journey-label::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--gold-primary);
+}
+
+.journey-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.journey-title em {
+  font-style: italic;
+  color: var(--gold-primary);
+}
+
+/* ── Journey Items ── */
+.journey-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+  position: relative;
+}
+
+/* The vertical progress line */
+.journey-progress-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(184, 149, 78, 0.1);
+  transform: translateX(-50%);
+}
+
+.journey-progress-fill {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 0%;
+  background: var(--gold-primary);
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(184, 149, 78, 0.4);
+}
+
+.journey-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10rem;
+  align-items: center;
+  position: relative;
+}
+
+.journey-item:nth-child(even) {
+  direction: rtl;
+}
+
+.journey-item:nth-child(even) .journey-content {
+  direction: ltr;
+  /* Reset text direction for content */
+}
+
+/* Steps Indicator */
+.journey-step-tag {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 1px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--gold-primary);
+  z-index: 5;
+  box-shadow: 0 0 0 8px var(--bg-primary);
+}
+
+/* Content */
+.journey-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.1);
+}
+
+.journey-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.journey-item:hover .journey-image {
+  transform: scale(1.05);
+}
+
+.journey-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.journey-step-num {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--gold-primary);
+  opacity: 0.6;
+}
+
+.journey-step-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.journey-step-desc {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 450px;
+}
+
+.journey-meta {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.journey-meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.journey-meta-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.journey-meta-val {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Ambient Accents */
+.journey-accent {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: 15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: -1;
+  white-space: nowrap;
+}
+
+.journey-accent-1 {
+  top: 10%;
+  right: -5%;
+}
+
+.journey-accent-2 {
+  bottom: 5%;
+  left: -5%;
+}
+
+@media (max-width: 1024px) {
+  .journey-item {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    text-align: center;
+  }
+
+  .journey-item:nth-child(even) {
+    direction: ltr;
+  }
+
+  .journey-progress-line,
+  .journey-progress-fill,
+  .journey-step-tag {
+    display: none;
+  }
+
+  .journey-container {
+    padding: 0 2rem;
+  }
+
+  .journey-step-desc {
+    margin: 0 auto;
+  }
+
+  .journey-meta {
+    justify-content: center;
+  }
+}

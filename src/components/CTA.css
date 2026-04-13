@@ -1,0 +1,203 @@
+/* ============================================================
+   ULTRA-LUXURY CALL TO ACTION (CTA)
+============================================================ */
+
+.cta-section-luxe {
+  background: var(--bg-secondary);
+  padding: 15rem 0 10rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+}
+
+/* Ambient Orbs with blur */
+.cta-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.cta-orb-primary {
+  width: 600px;
+  height: 600px;
+  background: var(--gold-primary);
+  top: -100px;
+  right: -100px;
+}
+
+.cta-orb-secondary {
+  width: 400px;
+  height: 400px;
+  background: var(--gold-light);
+  bottom: 0;
+  left: -50px;
+}
+
+/* Top Branding & Headline */
+.cta-top {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 8rem;
+  padding: 0 2rem;
+}
+
+.cta-eyebrow {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 3rem;
+  font-weight: 500;
+}
+
+.cta-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 12rem);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 4rem;
+}
+
+.cta-divider-line {
+  width: 100%;
+  max-width: 800px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  margin: 0 auto 4rem;
+  transform-origin: center;
+}
+
+.cta-body-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 5rem;
+  font-weight: 400;
+}
+
+/* Cinematic Action Button */
+.cta-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 3.5rem;
+  background: var(--text-primary);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-action-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: var(--gold-primary);
+}
+
+.cta-btn-arrow {
+  transition: transform 0.4s ease;
+}
+
+.cta-action-btn:hover .cta-btn-arrow {
+  transform: translateX(5px);
+}
+
+/* Contact Grid */
+.cta-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1300px;
+  width: 100%;
+  padding: 0 4rem;
+}
+
+.cta-info-block {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 2.5rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  transition: background 0.4s ease;
+}
+
+.cta-info-block:last-child {
+  border-right: none;
+}
+
+.cta-info-block:hover {
+  background: var(--bg-tertiary);
+}
+
+.cta-info-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  background: rgba(184, 149, 78, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-primary);
+  transition: background 0.4s ease, transform 0.4s ease;
+}
+
+.cta-info-block:hover .cta-info-icon {
+  background: rgba(184, 149, 78, 0.15);
+  transform: scale(1.1);
+}
+
+.cta-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cta-info-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.cta-info-value {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cta-info-value:hover {
+  color: var(--gold-primary);
+}
+
+@media (max-width: 900px) {
+  .cta-info-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-info-block {
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .cta-info-block:last-child {
+    border-bottom: none;
+  }
+}

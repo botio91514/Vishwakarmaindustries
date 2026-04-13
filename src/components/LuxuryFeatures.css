@@ -1,0 +1,159 @@
+.lf-section {
+  position: relative;
+  padding: 6rem 2rem 2rem;
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+.lf-header {
+  text-align: center;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.lf-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 1rem;
+}
+
+.lf-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--text-primary);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.lf-title .gold-text {
+  mix-blend-mode: difference;
+  color: var(--gold-primary);
+}
+
+.lf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1300px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Magic Torch Hover Cards */
+.lf-card {
+  position: relative;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.02);
+  cursor: none;
+  border: 1px solid rgba(184, 149, 78, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.lf-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* The animated radial gradient border */
+.lf-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y), 
+    rgba(184, 149, 78, 0.2),
+    transparent 40%
+  );
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.lf-card:hover::before {
+  opacity: 1;
+}
+
+.lf-card-inner {
+  position: relative;
+  background: var(--bg-secondary);
+  border-radius: inherit;
+  margin: 1px; /* Exposes the border glow */
+  padding: 3.5rem 2.5rem;
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: background 0.4s;
+  overflow: hidden;
+}
+
+/* Another subtle glow inside the card */
+.lf-card-inner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y), 
+    rgba(184, 149, 78, 0.04),
+    transparent 40%
+  );
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.lf-card:hover .lf-card-inner::before {
+  opacity: 1;
+}
+
+.lf-icon-wrapper {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 50%;
+  background: rgba(184, 149, 78, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.lf-card:hover .lf-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+  background: rgba(184, 149, 78, 0.1);
+}
+
+.lf-icon {
+  color: var(--gold-primary);
+  z-index: 2;
+  position: relative;
+}
+
+.lf-feature-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+.lf-feature-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  z-index: 1;
+}

@@ -1,0 +1,199 @@
+/* ============================================================
+   3D INFINITE MARQUEE GALLERY
+============================================================ */
+
+.gl-section {
+  background: var(--bg-primary);
+  padding: 8rem 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Header ─────────────────────────────────────── */
+.gl-header {
+  text-align: center;
+  padding: 0 2rem 5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.gl-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 1.5rem;
+}
+
+.gl-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.gl-title em {
+  font-style: italic;
+  color: var(--gold-primary);
+}
+
+/* SplitType chars */
+.gl-title .char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.gl-title .word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.gl-sub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* ── 3D Stage ───────────────────────────────────── */
+.gl-marquee-stage {
+  perspective: 1200px;
+  perspective-origin: center 40%;
+  width: 100%;
+  cursor: none;
+}
+
+.gl-marquee-wrapper {
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  will-change: transform;
+}
+
+/* ── Marquee Rows ───────────────────────────────── */
+.gl-row {
+  overflow: hidden;
+  width: 100%;
+}
+
+.gl-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  will-change: transform;
+}
+
+/* ── Individual Items ───────────────────────────── */
+.gl-item {
+  flex-shrink: 0;
+  width: 420px;
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gl-item-img-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: inherit;
+}
+
+.gl-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+              filter 0.6s ease;
+  filter: saturate(0.8) brightness(0.9);
+  will-change: transform;
+}
+
+.gl-item:hover .gl-item-img {
+  transform: scale(1.08);
+  filter: saturate(1.1) brightness(1);
+}
+
+/* Gold overlay on hover */
+.gl-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    170deg,
+    transparent 40%,
+    rgba(184, 149, 78, 0.75) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  border-radius: inherit;
+}
+
+.gl-item:hover .gl-item-overlay {
+  opacity: 1;
+}
+
+.gl-item-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #fff;
+  transform: translateY(15px);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.05s,
+              opacity 0.5s ease 0.05s;
+}
+
+.gl-item:hover .gl-item-title {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ── Footer Strip ───────────────────────────────── */
+.gl-footer-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.gl-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.gl-tag:hover {
+  color: var(--gold-primary);
+}
+
+.gl-dot-sep {
+  color: var(--gold-primary);
+  opacity: 0.4;
+  font-size: 0.8rem;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .gl-item {
+    width: 280px;
+    height: 190px;
+  }
+  .gl-title {
+    font-size: clamp(2.5rem, 10vw, 5rem);
+  }
+}

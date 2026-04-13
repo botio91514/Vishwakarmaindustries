@@ -1,0 +1,229 @@
+/* ============================================================
+   ELASTIC GRID — Column offset scroll effect
+   Inspired by codrops/ElasticGridScroll
+============================================================ */
+
+.eg-section {
+  background: var(--bg-primary);
+  padding: 8rem 0 2rem;
+  position: relative;
+}
+
+/* ── Background watermark ─────────────────────────────────── */
+.eg-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: 22vw;
+  font-weight: 700;
+  color: var(--text-primary);
+  opacity: 0.025;
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: -0.04em;
+  z-index: 0;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.eg-header {
+  text-align: center;
+  padding: 0 2rem;
+  margin-bottom: 6rem;
+  position: relative;
+  z-index: 10;
+}
+
+.eg-eyebrow {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 1.5rem;
+}
+
+.eg-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 5vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.eg-title em {
+  font-style: italic;
+  color: var(--gold-primary);
+}
+
+.eg-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+/* ── Grid — 4 columns ─────────────────────────────────────── */
+.eg-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1.4rem;
+  /* No row gap — items are flex children stacked in each column */
+  padding: 0 4rem;
+  position: relative;
+  z-index: 1;
+  /* Extra vertical padding so offset columns don't overflow badly */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* ── Columns ─────────────────────────────────────────────── */
+.eg-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  will-change: transform;
+}
+
+/* Initial CSS stagger offset — GSAP will animate FROM/TO around these */
+/* Keep small so they don't create visual void */
+.eg-col--1 { margin-top: 0;     }
+.eg-col--2 { margin-top: 4rem;  }
+.eg-col--3 { margin-top: 0;     }
+.eg-col--4 { margin-top: 6rem;  }
+
+/* ── Item ────────────────────────────────────────────────── */
+.eg-item {
+  position: relative;
+  cursor: none;
+  flex: 0 0 auto;
+}
+
+.eg-item-inner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.07),
+    0 2px 6px  rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.eg-item:hover .eg-item-inner {
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.13),
+    0 6px 18px  rgba(0, 0, 0, 0.07);
+}
+
+/* ── Image ───────────────────────────────────────────────── */
+.eg-img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;  /* Clean portrait */
+}
+
+.eg-img {
+  position: absolute;
+  inset: -10% 0;         /* Oversized for parallax travel */
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Gold gradient overlay — always just barely visible */
+.eg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    rgba(8, 8, 8, 0.75) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.eg-item:hover .eg-overlay {
+  opacity: 1;
+}
+
+/* ── Info (hover reveal) ─────────────────────────────────── */
+.eg-info {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.6rem 1.4rem;
+  opacity: 0;
+  transform: translateY(14px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.eg-cat {
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 0.4rem;
+}
+
+.eg-item-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.2;
+}
+
+/* ── Gold accent line under header ───────────────────────── */
+.eg-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  opacity: 0.5;
+}
+
+.eg-divider-line {
+  width: 60px;
+  height: 1px;
+  background: var(--gold-primary);
+}
+
+.eg-divider-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold-primary);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .eg-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 2.5rem;
+  }
+  .eg-col--4 { display: none; }
+}
+
+@media (max-width: 680px) {
+  .eg-section { padding: 5rem 0 6rem; }
+  .eg-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1.2rem;
+    column-gap: 0.8rem;
+  }
+  .eg-col--1 { margin-top: 0;     }
+  .eg-col--2 { margin-top: 2.5rem; }
+  .eg-col--3 { display: none; }
+  .eg-col--4 { display: none; }
+  .eg-header { margin-bottom: 3rem; }
+}

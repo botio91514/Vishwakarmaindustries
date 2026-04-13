@@ -1,0 +1,215 @@
+/* ============================================================
+   ABOUT PAGE — The Atelier Heritage
+============================================================ */
+
+.about-page {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Hero Section ────────────────────────────────── */
+.about-hero {
+  padding: 15vh 6% 10vh;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 8rem;
+  align-items: center;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.about-hero-media {
+  position: relative;
+  height: 85vh;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: var(--gold-primary);
+  margin-bottom: 2.5rem;
+  display: block;
+}
+
+.about-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 8vw, 8rem);
+  line-height: 0.95;
+  font-weight: 300;
+  margin-bottom: 4rem;
+}
+
+.about-title em {
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+.about-description {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  opacity: 0.8;
+  max-width: 480px;
+  margin-bottom: 3rem;
+}
+
+/* ── Philosophy Section ───────────────────────────── */
+.about-philosophy {
+  padding: 15vh 6%;
+  background: #fdfcf9; /* Slightly warmer cream */
+}
+
+.ph-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.ph-card {
+  padding: 4rem 2rem;
+  border-left: 1px solid rgba(184, 149, 78, 0.2);
+}
+
+.ph-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--gold-primary);
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.ph-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.ph-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  opacity: 0.6;
+}
+
+/* ── Ancestral Journey (Timeline) ────────────────── */
+.about-journey {
+  padding: 10vh 6%;
+}
+
+.journey-header {
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+.journey-timeline {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+}
+
+.journey-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10rem;
+  align-items: center;
+}
+
+.journey-row:nth-child(even) {
+  direction: rtl;
+}
+
+.journey-row:nth-child(even) .journey-content {
+  direction: ltr;
+}
+
+.journey-img-wrap {
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.journey-content {
+  max-width: 450px;
+}
+
+.journey-year {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  color: var(--gold-primary);
+  opacity: 0.3;
+  margin-bottom: 1rem;
+}
+
+.journey-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.7;
+}
+
+/* ── Vriksh Authenticity ────────────────────────── */
+.about-auth {
+  padding: 15vh 6%;
+  background-color: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-badge-container {
+  text-align: center;
+  max-width: 800px;
+}
+
+.auth-badge-circle {
+  width: 200px;
+  height: 200px;
+  border: 1px solid var(--gold-primary);
+  border-radius: 50%;
+  margin: 0 auto 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.auth-badge-text {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-primary);
+}
+
+.auth-statement {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .about-hero { grid-template-columns: 1fr; gap: 4rem; }
+  .ph-grid { grid-template-columns: 1fr; }
+  .journey-row { grid-template-columns: 1fr; gap: 4rem; }
+}

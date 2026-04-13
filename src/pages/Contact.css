@@ -1,0 +1,234 @@
+/* ============================================================
+   CONTACT PAGE — The Private Consultation (Silent Luxury)
+============================================================ */
+
+.contact-page {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ── Hero Reveal ────────────────────────────────── */
+.contact-hero {
+  padding: 22vh 6% 10rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 15rem);
+  font-weight: 300;
+  line-height: 0.8;
+  letter-spacing: -0.03em;
+}
+
+.contact-title span {
+  display: block;
+  overflow: hidden;
+}
+
+.contact-title em {
+  font-style: italic;
+  font-family: var(--font-display);
+  color: var(--gold-primary);
+  font-weight: 300;
+}
+
+/* ── Layout ────────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 12rem;
+  padding: 0 8% 12rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: var(--gold-primary);
+  font-weight: 600;
+}
+
+.info-value {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 300;
+  line-height: 1.2;
+  text-decoration: none;
+  color: var(--text-primary);
+  opacity: 0.9;
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  display: inline-block;
+}
+
+.info-value:hover {
+  color: var(--gold-primary);
+  transform: translateX(10px);
+}
+
+.social-links-minimal {
+  display: flex;
+  gap: 4rem;
+}
+
+.social-links-minimal a {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  text-decoration: none;
+  color: var(--text-primary);
+  opacity: 0.5;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.social-links-minimal a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold-primary);
+  transition: width 0.4s ease;
+}
+
+.social-links-minimal a:hover {
+  opacity: 1;
+  color: var(--gold-primary);
+}
+
+.social-links-minimal a:hover::after {
+  width: 100%;
+}
+
+/* ── Minimalist Form ───────────────────────────── */
+.contact-form-container {
+  position: relative;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.form-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  transition: all 0.4s ease;
+}
+
+.form-input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1.5rem 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  width: 100%;
+}
+
+.form-input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--gold-primary);
+}
+
+.form-input:focus + .form-label {
+  color: var(--gold-primary);
+  transform: translateY(-5px);
+  opacity: 1;
+}
+
+.form-input::placeholder {
+  color: rgba(0, 0, 0, 0.1);
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.contact-submit {
+  align-self: flex-start;
+  background: var(--text-primary);
+  border: none;
+  color: var(--bg-secondary);
+  padding: 1.5rem 5rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  margin-top: 2rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  border-radius: 2px;
+}
+
+.contact-submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gold-primary);
+  transition: left 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 0;
+}
+
+.contact-submit:hover::before {
+  left: 0;
+}
+
+.contact-submit span {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-submit:hover {
+  box-shadow: 0 10px 30px -10px rgba(184, 149, 78, 0.4);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 8rem;
+    padding: 0 8% 8rem;
+  }
+
+  .contact-hero {
+    padding: 18vh 8% 8rem;
+  }
+
+  .contact-title {
+    font-size: 5rem;
+  }
+}

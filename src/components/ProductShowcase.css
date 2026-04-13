@@ -1,0 +1,239 @@
+/* ============================================================
+   PRODUCT SHOWCASE — Cinematic Vertical Gallery
+============================================================ */
+
+.ps-section {
+  background: var(--bg-primary);
+  padding: 10rem 0 0;
+  position: relative;
+  z-index: 2;
+}
+
+.ps-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
+}
+
+.ps-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-primary);
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.ps-title-main {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 6vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+.ps-title-main em {
+    font-style: italic;
+    color: var(--gold-primary);
+}
+
+.ps-item {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 4rem; /* Tightened for minimal feel */
+}
+
+/* ── Sticky Image Background ─────────────────────── */
+.ps-img-wrap {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: -1;
+  box-shadow: 0 60px 100px rgba(0, 0, 0, 0.15);
+}
+
+.ps-img {
+  width: 100%;
+  height: 120%; /* For parallax */
+  object-fit: cover;
+  will-change: transform;
+}
+
+.ps-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 14, 14, 0.9) 0%,
+    rgba(14, 14, 14, 0.5) 40%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Content Layout ────────────────────────────── */
+.ps-container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.ps-number {
+  position: absolute;
+  top: -80px;
+  left: 6rem;
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 300;
+  color: var(--gold-primary);
+  opacity: 0.1;
+  line-height: 1;
+}
+
+.ps-content {
+  max-width: 500px;
+  color: #fff;
+  will-change: transform, opacity;
+}
+
+.ps-subtitle {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 1.5rem;
+}
+
+.ps-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.ps-desc {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3.5rem;
+  max-width: 440px;
+}
+
+/* ── Meta & CTA ─────────────────────────────────── */
+.ps-meta {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.ps-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ps-meta-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.ps-meta-value {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.05em;
+}
+
+.ps-cta {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--gold-primary);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  cursor: none;
+}
+
+.ps-cta-line {
+  width: 120px;
+  height: 1px;
+  background: var(--gold-gradient);
+  transition: width 0.4s ease;
+}
+
+.ps-cta:hover .ps-cta-line {
+  width: 160px;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .ps-container {
+    padding: 0 3rem;
+  }
+  .ps-number {
+    left: 3rem;
+  }
+  .ps-img-wrap {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ps-header {
+      margin-bottom: 4rem;
+  }
+  .ps-item {
+    height: auto;
+    padding: 8rem 0;
+    margin-bottom: 4rem;
+  }
+  .ps-img-wrap {
+    position: relative;
+    left: 2.5%;
+    transform: none;
+    width: 95%;
+    height: 400px;
+    margin-bottom: 3rem;
+  }
+  .ps-img-overlay {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(14, 14, 14, 0.8) 100%
+    );
+  }
+  .ps-container {
+    padding: 0 2rem;
+  }
+  .ps-number {
+    top: -150px;
+    left: 2rem;
+    font-size: 5rem;
+  }
+  .ps-title {
+    font-size: 3rem;
+  }
+}
