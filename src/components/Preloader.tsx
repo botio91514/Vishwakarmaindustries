@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { gsap } from 'gsap';
 
 export const Preloader = ({ onComplete }: { onComplete?: () => void }) => {

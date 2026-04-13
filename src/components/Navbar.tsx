@@ -111,7 +111,7 @@ export const Navbar = () => {
                     </div>
 
                     <nav className="menu-nav">
-                        {navItems.map((item, index) => (
+                        {navItems.map((item) => (
                             <Link
                                 key={item.path}
                                 to={item.path}

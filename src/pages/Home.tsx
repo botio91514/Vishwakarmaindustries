@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
-import { MagneticCursor } from '../components/MagneticCursor';
 import { Particles } from '../components/Particles';
 import { Navbar } from '../components/Navbar';
 import { LuxuryAbout } from '../components/LuxuryAbout';
