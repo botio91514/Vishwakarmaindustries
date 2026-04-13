@@ -20,7 +20,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: rgba(184, 149, 78, 0.08); /* Gold hint */
+  background: rgba(184, 149, 78, 0.08);
+  /* Gold hint */
   border: 1px solid rgba(184, 149, 78, 0.2);
   border-radius: 100px;
   font-size: 0.65rem;
@@ -129,42 +130,37 @@
   font-weight: 400;
 }
 
-/* ── Vriksh Badge ────────────────────────────────── */
-.la-vriksh-badge {
-  position: absolute;
-  right: -50px;
-  top: 40%;
-  width: 100px;
-  height: 100px;
+/* ── Vriksh Logo (Beside Text) ───────────────────────── */
+.la-text-with-logo {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.la-text-with-logo .la-text {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.la-vriksh-logo-wrap {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none;
-  z-index: 5;
+  transition: all 0.4s ease;
 }
 
-.la-vriksh-badge svg {
+.la-vriksh-logo-wrap:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.la-vriksh-logo {
   width: 100%;
   height: 100%;
-  fill: var(--gold-primary);
-  font-family: var(--font-body);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.la-badge-center {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background: var(--gold-gradient);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 0.6rem;
-  box-shadow: 0 4px 15px rgba(184, 149, 78, 0.4);
+  object-fit: contain;
 }
 
 /* ── Cinematic Stats ─────────────────────────────── */
@@ -222,7 +218,8 @@
 
 .la-image {
   width: 100%;
-  height: 120%; /* Taller for parallax */
+  height: 120%;
+  /* Taller for parallax */
   object-fit: cover;
   filter: contrast(1.05) brightness(0.95);
   position: absolute;
@@ -233,11 +230,9 @@
 .la-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 70%,
-    rgba(250, 249, 247, 0.4) 100%
-  );
+  background: linear-gradient(180deg,
+      transparent 70%,
+      rgba(250, 249, 247, 0.4) 100%);
   pointer-events: none;
 }
 
@@ -247,13 +242,22 @@
     grid-template-columns: 1fr;
     gap: 5rem;
   }
+
   .la-container {
     padding: 0 2rem;
   }
-  .la-vriksh-badge {
-    right: 0;
-    top: -60px;
+
+  .la-text-with-logo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
+
+  .la-vriksh-logo-wrap {
+    width: 80px;
+    height: 80px;
+  }
+
   .la-section {
     padding: 6rem 0;
   }

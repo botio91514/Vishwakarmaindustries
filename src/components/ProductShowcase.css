@@ -1,165 +1,173 @@
 /* ============================================================
-   PRODUCT SHOWCASE — Cinematic Vertical Gallery
+   PRODUCT SHOWCASE — Architectural Vertical Gallery
 ============================================================ */
 
 .ps-section {
   background: var(--bg-primary);
-  padding: 10rem 0 0;
+  padding: 8rem 0;
   position: relative;
   z-index: 2;
+  overflow: hidden;
 }
 
 .ps-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 0 2rem;
+  text-align: center;
+  margin-bottom: 6rem;
+  padding: 0 2rem;
 }
 
 .ps-label {
-    display: inline-block;
-    font-size: 0.75rem;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--gold-primary);
-    margin-bottom: 2rem;
-    opacity: 0.8;
-}
-
-.ps-title-main {
-    font-family: var(--font-display);
-    font-size: clamp(3.5rem, 6vw, 6.5rem);
-    font-weight: 300;
-    line-height: 1.1;
-    color: var(--text-primary);
-}
-
-.ps-title-main em {
-    font-style: italic;
-    color: var(--gold-primary);
-}
-
-.ps-item {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin-bottom: 4rem; /* Tightened for minimal feel */
-}
-
-/* ── Sticky Image Background ─────────────────────── */
-.ps-img-wrap {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  height: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  z-index: -1;
-  box-shadow: 0 60px 100px rgba(0, 0, 0, 0.15);
-}
-
-.ps-img {
-  width: 100%;
-  height: 120%; /* For parallax */
-  object-fit: cover;
-  will-change: transform;
-}
-
-.ps-img-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(14, 14, 14, 0.9) 0%,
-    rgba(14, 14, 14, 0.5) 40%,
-    transparent 100%
-  );
-  pointer-events: none;
-}
-
-/* ── Content Layout ────────────────────────────── */
-.ps-container {
-  max-width: 1300px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 6rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-
-.ps-number {
-  position: absolute;
-  top: -80px;
-  left: 6rem;
-  font-family: var(--font-display);
-  font-size: 8rem;
-  font-weight: 300;
-  color: var(--gold-primary);
-  opacity: 0.1;
-  line-height: 1;
-}
-
-.ps-content {
-  max-width: 500px;
-  color: #fff;
-  will-change: transform, opacity;
-}
-
-.ps-subtitle {
-  display: inline-block;
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold-primary);
   margin-bottom: 1.5rem;
 }
 
-.ps-title {
+.ps-title-main {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 6vw, 6rem);
+  font-size: clamp(3rem, 6vw, 6rem);
   font-weight: 300;
   line-height: 1;
+  color: var(--text-primary);
+}
+
+.ps-title-main em {
+  font-style: italic;
+  color: var(--gold-primary);
+}
+
+/* ── Items List ──────────────────────────────────── */
+.ps-items-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem; /* Tightened from 20rem */
+}
+
+.ps-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  gap: 6rem;
+}
+
+.ps-item.ps-reverse {
+  flex-direction: row-reverse;
+}
+
+/* ── Large Background Number ─────────────────────── */
+.ps-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: 25rem; /* Minimized from 40rem */
+  font-weight: 300;
+  color: var(--gold-primary);
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+/* ── Image Column ───────────────────────────────── */
+.ps-img-col {
+  flex: 1.2;
+  position: relative;
+  z-index: 2;
+}
+
+.ps-img-wrap {
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+}
+
+.ps-img {
+  width: 100%;
+  height: 110%; /* For parallax */
+  object-fit: cover;
+}
+
+.ps-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(14, 14, 14, 0.4), transparent);
+}
+
+/* ── Content Column ────────────────────────────── */
+.ps-content-col {
+  flex: 1;
+  position: relative;
+  z-index: 3;
+}
+
+.ps-content {
+  max-width: 500px;
+}
+
+.ps-subtitle {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
   margin-bottom: 2rem;
-  color: #fff;
+}
+
+.ps-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
 }
 
 .ps-desc {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 3.5rem;
-  max-width: 440px;
+  font-size: 0.95rem; /* Minimized */
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
 }
 
-/* ── Meta & CTA ─────────────────────────────────── */
+/* ── Meta & Footer ──────────────────────────────── */
 .ps-meta {
-  display: flex;
-  gap: 3rem;
+  border-top: 1px solid rgba(184, 149, 78, 0.2);
+  padding-top: 2rem;
   margin-bottom: 4rem;
 }
 
-.ps-meta-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
 .ps-meta-label {
+  display: block;
   font-size: 0.6rem;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
 }
 
 .ps-meta-value {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.ps-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ps-price {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
   letter-spacing: 0.05em;
 }
 
@@ -169,71 +177,95 @@
   padding: 0;
   color: var(--gold-primary);
   font-size: 0.8rem;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  cursor: none;
+  gap: 1rem;
+  cursor: pointer;
 }
 
 .ps-cta-line {
-  width: 120px;
+  width: 60px;
   height: 1px;
   background: var(--gold-gradient);
-  transition: width 0.4s ease;
+  transition: width 0.4s cubic-bezier(0.1, 0, 0, 1);
 }
 
 .ps-cta:hover .ps-cta-line {
-  width: 160px;
+  width: 100px;
+}
+
+/* ── Outro ──────────────────────────────────────── */
+.ps-outro {
+  margin-top: 20rem;
+  text-align: center;
+}
+
+.ps-outro-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 10rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 4rem;
+}
+
+.ps-outro-title em {
+  font-style: italic;
+  color: var(--gold-primary);
+}
+
+.ps-final-button {
+  background: transparent;
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+  padding: 1.5rem 5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.ps-final-button:hover {
+  background: var(--gold-primary);
+  color: var(--bg-primary);
 }
 
 /* ── Responsive ─────────────────────────────────── */
 @media (max-width: 1024px) {
-  .ps-container {
-    padding: 0 3rem;
+  .ps-items-list {
+    padding: 0 2rem;
   }
-  .ps-number {
-    left: 3rem;
-  }
-  .ps-img-wrap {
-    width: 95%;
+  .ps-item {
+    gap: 4rem;
   }
 }
 
 @media (max-width: 768px) {
+  .ps-section {
+    padding: 10rem 0;
+  }
   .ps-header {
-      margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
-  .ps-item {
-    height: auto;
-    padding: 8rem 0;
-    margin-bottom: 4rem;
+  .ps-items-list {
+    gap: 10rem;
   }
-  .ps-img-wrap {
-    position: relative;
-    left: 2.5%;
-    transform: none;
-    width: 95%;
-    height: 400px;
-    margin-bottom: 3rem;
+  .ps-item, .ps-item.ps-reverse {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
   }
-  .ps-img-overlay {
-    background: linear-gradient(
-      180deg,
-      transparent 0%,
-      rgba(14, 14, 14, 0.8) 100%
-    );
+  .ps-img-col {
+    width: 100%;
   }
-  .ps-container {
-    padding: 0 2rem;
+  .ps-content-col {
+    width: 100%;
   }
   .ps-number {
-    top: -150px;
-    left: 2rem;
-    font-size: 5rem;
-  }
-  .ps-title {
-    font-size: 3rem;
+    font-size: 20rem;
+    top: 20%;
+    left: 10%;
+    transform: none;
   }
 }

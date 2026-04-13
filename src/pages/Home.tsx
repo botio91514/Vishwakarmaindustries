@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
@@ -6,11 +7,9 @@ import { Particles } from '../components/Particles';
 import { Navbar } from '../components/Navbar';
 import { LuxuryAbout } from '../components/LuxuryAbout';
 import { ElasticGrid } from '../components/ElasticGrid';
-import { LuxuryFeatures } from '../components/LuxuryFeatures';
-import { ProductShowcase } from '../components/ProductShowcase';
-import { Testimonials } from '../components/Testimonials';
-import { LuxuryJourney } from '../components/LuxuryJourney';
+import { ManufacturingExcellence } from '../components/ManufacturingExcellence';
 import { CTA } from '../components/CTA';
+import { ScrollingBanner } from '../components/ScrollingBanner';
 import { Footer } from '../components/Footer';
 import { Preloader } from '../components/Preloader';
 import '../index.css';
@@ -163,11 +162,11 @@ const Home = () => {
                 <span className="line-inner gold-text">INDUSTRIES</span>
               </span>
             </h1>
-            <p className="hero-subtitle">Your Desire,We Design</p>
-            <a href="#products" className="hero-cta interactive magnetic">
+            <p className="hero-subtitle">Your Desire, We Design</p>
+            <Link to="/products" className="hero-cta interactive magnetic">
               Explore Collection
               <ArrowRight size={18} />
-            </a>
+            </Link>
           </div>
 
           <div className="scroll-indicator">
@@ -178,11 +177,9 @@ const Home = () => {
 
         <LuxuryAbout />
         <ElasticGrid />
-        <LuxuryFeatures />
-        <ProductShowcase />
-        <Testimonials />
-        <LuxuryJourney />
+        <ManufacturingExcellence />
         <CTA />
+        <ScrollingBanner />
         <Footer />
       </div>
     </>

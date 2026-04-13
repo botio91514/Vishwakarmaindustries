@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 import './LuxuryAbout.css';
+import vrikshLogo from '../assets/Vriksh.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,13 +11,12 @@ export const LuxuryAbout: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const badgeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       // 1. Text reveals with SplitType
       const splitTitle = new SplitType('.la-title', { types: 'chars' });
-      
+
       // Title reveal animation
       gsap.fromTo(splitTitle.chars,
         { y: 100, opacity: 0, rotateX: -90 },
@@ -76,30 +76,7 @@ export const LuxuryAbout: React.FC = () => {
         });
       }
 
-      // 3. Vriksh Badge rotation
-      if (badgeRef.current) {
-        gsap.to(badgeRef.current, {
-          rotate: 360,
-          duration: 20,
-          repeat: -1,
-          ease: 'none'
-        });
-        
-        // Fade in badge
-        gsap.fromTo(badgeRef.current,
-          { scale: 0, opacity: 0 },
-          {
-            scale: 1, opacity: 1,
-            duration: 1,
-            delay: 0.5,
-            ease: 'back.out(1.7)',
-            scrollTrigger: {
-              trigger: '.la-body-wrap',
-              start: 'top 70%',
-            }
-          }
-        );
-      }
+
 
       // 4. Animated Counters
       const stats = document.querySelectorAll('.la-stat-num');
@@ -134,7 +111,7 @@ export const LuxuryAbout: React.FC = () => {
     <section ref={sectionRef} className="la-section">
       <div className="la-container">
         <div className="la-grid">
-          
+
           <div ref={contentRef} className="la-content">
             <div className="la-decoration">
               <span className="la-dec-line" />
@@ -145,9 +122,9 @@ export const LuxuryAbout: React.FC = () => {
               <span>✦</span> Jodhpur, Rajasthan
             </div>
 
-            <span className="la-label">Atelier</span>
-            <h2 className="la-title">Crafting <em>Legacy</em> Since 1985</h2>
-            
+            <span className="la-label"></span>
+            <h2 className="la-title">Crafting <em>Legacy Since 1985</em></h2>
+
             <div className="la-divider">
               <div className="la-divider-line" />
               <div className="la-divider-dot" />
@@ -156,27 +133,15 @@ export const LuxuryAbout: React.FC = () => {
 
             <div className="la-body-wrap">
               <p className="la-text">
-                Based in the historic city of Jodhpur, Rajasthan, we are master craftsmen dedicated to the art of luxury furniture. At Vishwakarma Industries, we don't just build furniture; we curate heritage.
+                We being based in the city of world famous handicrafts, Jodhpur (Rajasthan, India) are the manufacturer and exporter of various handcrafted wooden and iron furniture. Our monthly in-house production is several 40' HQ containers. We offer our clients highly customized furniture along with enhanced level of quality and performance.
               </p>
-              <p className="la-text">
-                Our sustainable approach ensures every piece is Vriksh Certified, using timber sourced from genuine, eco-conscious origins to protect our planet while elevating your space for generations to come.
-              </p>
-
-              {/* Circular Badge */}
-              <div ref={badgeRef} className="la-vriksh-badge">
-                <svg viewBox="0 0 100 100">
-                  <path
-                    id="badgePath"
-                    d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-                    fill="none"
-                  />
-                  <text font-size="8.5">
-                    <textPath xlinkHref="#badgePath" startOffset="0%">
-                      VRIKSH CERTIFIED • ECO CONSCIOUS • VRIKSH CERTIFIED • ECO CONSCIOUS •
-                    </textPath>
-                  </text>
-                </svg>
-                <div className="la-badge-center">VI</div>
+              <div className="la-text-with-logo">
+                <p className="la-text">
+                  At Vishwakarma Industries, we believe in Sustainable Development and for that cause, the timber wood used by us comes from genuine sources. We use only Vriksh Certified wood.
+                </p>
+                <div className="la-vriksh-logo-wrap">
+                  <img src={vrikshLogo} alt="Vriksh Certified" className="la-vriksh-logo" />
+                </div>
               </div>
             </div>
 
@@ -213,11 +178,11 @@ export const LuxuryAbout: React.FC = () => {
           </div>
 
           <div className="la-image-wrap">
-            <img 
+            <img
               ref={imageRef}
-              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80" 
-              alt="Craftsmanship" 
-              className="la-image" 
+              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80"
+              alt="Craftsmanship"
+              className="la-image"
             />
             <div className="la-image-overlay" />
           </div>

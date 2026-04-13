@@ -73,7 +73,8 @@
 /* ── Philosophy Section ───────────────────────────── */
 .about-philosophy {
   padding: 15vh 6%;
-  background: #fdfcf9; /* Slightly warmer cream */
+  background: #fdfcf9;
+  /* Slightly warmer cream */
 }
 
 .ph-grid {
@@ -208,8 +209,75 @@
 }
 
 /* ── Responsive ─────────────────────────────────── */
+@media (max-width: 1400px) {
+  .about-hero {
+    padding: 12vh 4% 8vh;
+    gap: 4rem;
+  }
+}
+
 @media (max-width: 1024px) {
-  .about-hero { grid-template-columns: 1fr; gap: 4rem; }
-  .ph-grid { grid-template-columns: 1fr; }
-  .journey-row { grid-template-columns: 1fr; gap: 4rem; }
+  .about-hero {
+    grid-template-columns: 1fr;
+    padding: 10rem 2rem 6rem;
+    text-align: center;
+  }
+  .about-hero-media {
+    height: 60vh;
+    order: -1;
+  }
+  .about-description {
+    margin: 0 auto 3rem;
+  }
+  .ph-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .journey-timeline {
+    gap: 8rem;
+  }
+  .journey-row {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  .journey-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ph-grid {
+    grid-template-columns: 1fr;
+  }
+  .ph-card {
+    padding: 3rem 1rem;
+    border-left: none;
+    border-top: 1px solid rgba(184, 149, 78, 0.2);
+  }
+  .journey-timeline {
+    gap: 6rem;
+  }
+  .journey-year {
+    font-size: 3.5rem;
+  }
+  .auth-statement {
+    font-size: 1.75rem;
+  }
+  .auth-badge-circle {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 3.25rem;
+  }
+  .about-hero-media {
+    height: 45vh;
+  }
+  .ph-title {
+    font-size: 1.75rem;
+  }
 }

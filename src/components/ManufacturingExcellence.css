@@ -1,0 +1,206 @@
+/* ============================================================
+   MANUFACTURING EXCELLENCE — Asymmetric Editorial Layout
+============================================================ */
+
+.mfg-section {
+  background: var(--bg-primary);
+  padding: 6rem 0 8rem;
+  position: relative;
+  border-top: 1px solid rgba(184, 149, 78, 0.15);
+}
+
+.mfg-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 8rem;
+}
+
+/* ── Left Sidebar (Sticky) ───────────────────────── */
+.mfg-sidebar {
+  flex: 0 0 35%;
+  position: relative;
+  height: 100%;
+}
+
+.mfg-sticky-content {
+  padding-top: 2rem;
+}
+
+.mfg-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.mfg-badge-text {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+}
+
+.mfg-badge-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--gold-primary);
+  border-radius: 50%;
+}
+
+.mfg-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.mfg-intro {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 90%;
+}
+
+/* ── Right Content List ─────────────────────────── */
+.mfg-content-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mfg-item {
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.mfg-item:first-child {
+  border-top: none;
+}
+
+.mfg-item-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.mfg-item-num {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--gold-primary);
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.mfg-item-title {
+  font-size: 1.35rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  line-height: 1;
+  padding-bottom: 0.15rem;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+}
+
+.mfg-item-body {
+  display: flex;
+  gap: 3.5rem;
+  align-items: flex-start;
+  will-change: transform, opacity;
+}
+
+.mfg-item-img-wrap {
+  flex: 0 0 45%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 2px;
+}
+
+.mfg-item-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.8) contrast(1.05);
+  transition: filter 0.6s ease, transform 0.8s ease;
+}
+
+.mfg-item:hover .mfg-item-img-wrap img {
+  filter: grayscale(0) contrast(1);
+  transform: scale(1.03);
+}
+
+.mfg-item-text-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+}
+
+.mfg-item-tag-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mfg-item-tagline {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.mfg-item-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(184, 149, 78, 0.2);
+}
+
+.mfg-item-desc {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .mfg-container {
+    gap: 4rem;
+    flex-direction: column;
+    padding: 0 3rem;
+  }
+  .mfg-sidebar {
+    width: 100%;
+    flex: none;
+  }
+  .mfg-sticky-content { padding-top: 0; }
+  .mfg-item-body {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .mfg-item-img-wrap {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mfg-section {
+    padding: 4rem 0;
+  }
+  .mfg-container {
+    padding: 0 1.5rem;
+  }
+  .mfg-title {
+    font-size: 2.25rem;
+  }
+  .mfg-item-header { gap: 1rem; margin-bottom: 1.5rem; }
+  .mfg-item-title { font-size: 1.25rem; }
+}

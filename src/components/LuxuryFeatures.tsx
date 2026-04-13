@@ -37,15 +37,15 @@ export const LuxuryFeatures: React.FC = () => {
     const ctx = gsap.context(() => {
       // Staggered 3D reveal for cards
       gsap.fromTo(cardsRef.current,
-        { 
-          y: 150, 
-          opacity: 0, 
+        {
+          y: 150,
+          opacity: 0,
           rotationX: -30,
-          scale: 0.9 
+          scale: 0.9
         },
         {
-          y: 0, 
-          opacity: 1, 
+          y: 0,
+          opacity: 1,
           rotationX: 0,
           scale: 1,
           duration: 1.2,
@@ -68,7 +68,7 @@ export const LuxuryFeatures: React.FC = () => {
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
     const cards = cardsRef.current;
-    
+
     cards.forEach(card => {
       if (!card) return;
       const rect = card.getBoundingClientRect();
@@ -92,8 +92,8 @@ export const LuxuryFeatures: React.FC = () => {
         {features.map((feature, index) => {
           const IconComponent = feature.icon;
           return (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="lf-card interactive"
               ref={el => cardsRef.current[index] = el}
             >

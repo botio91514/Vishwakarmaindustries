@@ -20,13 +20,13 @@ export default function About() {
         duration: 1.8,
         ease: 'power4.inOut'
       })
-      .from('.about-eyebrow, .about-title, .about-description', {
-        y: 60,
-        opacity: 0,
-        stagger: 0.15,
-        duration: 1.2,
-        ease: 'power3.out'
-      }, '-=0.8');
+        .from('.about-eyebrow, .about-title, .about-description', {
+          y: 60,
+          opacity: 0,
+          stagger: 0.15,
+          duration: 1.2,
+          ease: 'power3.out'
+        }, '-=0.8');
 
       // 2. Parallax Hero Image
       gsap.to('.about-hero-img', {
@@ -58,7 +58,7 @@ export default function About() {
       rows.forEach((row) => {
         const img = row.querySelector('.journey-img-wrap');
         const content = row.querySelector('.journey-content');
-        
+
         gsap.from(img, {
           x: row.style.direction === 'rtl' ? 100 : -100,
           opacity: 0,
@@ -104,10 +104,10 @@ export default function About() {
         {/* Cinematic Hero */}
         <section className="about-hero">
           <div className="about-hero-media">
-            <img 
+            <img
               className="about-hero-img"
-              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=2000&q=80" 
-              alt="The Atelier" 
+              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=2000&q=80"
+              alt="The Atelier"
             />
           </div>
           <div className="about-hero-content">
@@ -143,14 +143,14 @@ export default function About() {
         {/* Ancestral Journey (Timeline) */}
         <section className="about-journey">
           <div className="journey-header">
-             <span className="about-eyebrow">— THE JOURNEY —</span>
-             <h2 className="about-title">The <em>Timeline</em> of Wood</h2>
+            <span className="about-eyebrow">— THE JOURNEY —</span>
+            <h2 className="about-title">The <em>Timeline</em> of Wood</h2>
           </div>
-          
+
           <div className="journey-timeline">
             <div className="journey-row">
               <div className="journey-img-wrap">
-                <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1200&q=80" alt="1985 Origins" style={{width: '100%', height:'100%', objectFit:'cover'}} />
+                <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1200&q=80" alt="1985 Origins" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="journey-content">
                 <span className="journey-year">1985</span>
@@ -161,7 +161,7 @@ export default function About() {
 
             <div className="journey-row" style={{ direction: 'rtl' }}>
               <div className="journey-img-wrap">
-                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80" alt="Global Expansion" style={{width: '100%', height:'100%', objectFit:'cover'}} />
+                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80" alt="Global Expansion" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="journey-content" style={{ direction: 'ltr' }}>
                 <span className="journey-year">2005</span>
@@ -170,9 +170,9 @@ export default function About() {
               </div>
             </div>
 
-             <div className="journey-row">
+            <div className="journey-row">
               <div className="journey-img-wrap">
-                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80" alt="2026 Vision" style={{width: '100%', height:'100%', objectFit:'cover'}} />
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80" alt="2026 Vision" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="journey-content">
                 <span className="journey-year">2026</span>
@@ -187,15 +187,15 @@ export default function About() {
         <section className="about-auth">
           <div className="auth-badge-container">
             <div className="auth-badge-circle">
-               <svg viewBox="0 0 100 100" className="auth-badge-circle-outer" style={{ position: 'absolute', width: '150%', height:'150%' }}>
-                  <path id="badgePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
-                  <text font-size="8.5" letter-spacing="2">
-                    <textPath xlinkHref="#badgePath" startOffset="0%">
-                      VRIKSH CERTIFIED • AUTHENTIC JODHPUR • 1985 • VRIKSH CERTIFIED •
-                    </textPath>
-                  </text>
-                </svg>
-                <div className="auth-badge-text">VI</div>
+              <svg viewBox="0 0 100 100" className="auth-badge-circle-outer" style={{ position: 'absolute', width: '150%', height: '150%' }}>
+                <path id="badgePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+                <text font-size="8.5" letter-spacing="2">
+                  <textPath xlinkHref="#badgePath" startOffset="0%">
+                    VRIKSH CERTIFIED • AUTHENTIC JODHPUR • 1985 • VRIKSH CERTIFIED •
+                  </textPath>
+                </text>
+              </svg>
+              <div className="auth-badge-text">VI</div>
             </div>
             <h2 className="auth-statement">Dedicated to Sustainable Luxury. <em>Forever.</em></h2>
           </div>

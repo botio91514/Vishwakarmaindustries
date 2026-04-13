@@ -1,234 +1,318 @@
 /* ============================================================
-   CONTACT PAGE — The Private Consultation (Silent Luxury)
+   CONTACT PAGE — Architectural Brand Experience
 ============================================================ */
 
 .contact-page {
-  background-color: var(--bg-secondary);
+  background-color: #F8F6F2;
   color: var(--text-primary);
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
-/* ── Hero Reveal ────────────────────────────────── */
-.contact-hero {
-  padding: 22vh 6% 10rem;
+/* ── Architectural Grid Pattern (Light) ─────────── */
+.contact-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(28, 28, 28, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(28, 28, 28, 0.03) 1px, transparent 1px);
+  background-size: 100px 100px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-container {
   max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* ── SECTION 1: HERO INTRO ─────────────────────── */
+.contact-hero-intro {
+  padding: 12rem 0 6rem;
+  text-align: center;
+}
+
+.hero-content-centered {
+  max-width: 800px;
   margin: 0 auto;
 }
 
-.contact-title {
+.hero-title-main {
   font-family: var(--font-display);
-  font-size: clamp(4rem, 12vw, 15rem);
+  font-size: clamp(2.5rem, 5vw, 5.5rem);
   font-weight: 300;
-  line-height: 0.8;
-  letter-spacing: -0.03em;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5rem;
 }
 
-.contact-title span {
+.hero-title-main .line {
   display: block;
   overflow: hidden;
 }
 
-.contact-title em {
-  font-style: italic;
-  font-family: var(--font-display);
+.hero-title-main .line-inner {
+  display: block;
+}
+
+.hero-title-main .gold-text {
   color: var(--gold-primary);
+  font-style: italic;
   font-weight: 300;
 }
 
-/* ── Layout ────────────────────────────────────── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 12rem;
-  padding: 0 8% 12rem;
-  max-width: 1600px;
+.hero-subtext {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 450px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* ── SECTION 2: CONTACT FORM ───────────────────── */
+.contact-form-section {
+  padding: 4rem 0;
+  margin-bottom: 8rem;
+}
+
+.form-wrapper {
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.contact-info {
+.minimal-form {
   display: flex;
   flex-direction: column;
-  gap: 8rem;
+  gap: 3.5rem;
 }
 
-.info-block {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem 3.5rem;
 }
 
-.info-label {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
-  color: var(--gold-primary);
-  font-weight: 600;
-}
-
-.info-value {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  font-weight: 300;
-  line-height: 1.2;
-  text-decoration: none;
-  color: var(--text-primary);
-  opacity: 0.9;
-  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-  display: inline-block;
-}
-
-.info-value:hover {
-  color: var(--gold-primary);
-  transform: translateX(10px);
-}
-
-.social-links-minimal {
-  display: flex;
-  gap: 4rem;
-}
-
-.social-links-minimal a {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  text-decoration: none;
-  color: var(--text-primary);
-  opacity: 0.5;
-  transition: all 0.4s ease;
+.form-group-minimal {
   position: relative;
-}
-
-.social-links-minimal a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--gold-primary);
-  transition: width 0.4s ease;
-}
-
-.social-links-minimal a:hover {
-  opacity: 1;
-  color: var(--gold-primary);
-}
-
-.social-links-minimal a:hover::after {
   width: 100%;
 }
 
-/* ── Minimalist Form ───────────────────────────── */
-.contact-form-container {
-  position: relative;
+.form-group-minimal.full-width {
+  grid-column: span 2;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 5rem;
-  position: relative;
-}
-
-.form-label {
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-  transition: all 0.4s ease;
-}
-
-.form-input {
+.form-group-minimal input,
+.form-group-minimal select,
+.form-group-minimal textarea {
+  width: 100%;
   background: none;
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 1.5rem 0;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--text-primary);
-  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  padding: 1.25rem 0;
+  font-family: inherit;
+  font-size: 1.1rem;
+  color: #1C1C1C;
+  outline: none;
+  border-bottom: 1px solid rgba(28, 28, 28, 0.1);
+  transition: border-color 0.4s ease;
+}
+
+.form-group-minimal label {
+  position: absolute;
+  top: 1.25rem;
+  left: 0;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.input-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold-primary);
+  transition: width 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.form-group-minimal input:focus ~ .input-underline,
+.form-group-minimal textarea:focus ~ .input-underline {
   width: 100%;
 }
 
-.form-input:focus {
-  outline: none;
-  border-bottom: 1px solid var(--gold-primary);
-}
-
-.form-input:focus + .form-label {
-  color: var(--gold-primary);
-  transform: translateY(-5px);
-  opacity: 1;
-}
-
-.form-input::placeholder {
-  color: rgba(0, 0, 0, 0.1);
-  font-style: italic;
-  font-size: 1.2rem;
-}
-
-.contact-submit {
-  align-self: flex-start;
-  background: var(--text-primary);
-  border: none;
-  color: var(--bg-secondary);
-  padding: 1.5rem 5rem;
-  font-size: 0.7rem;
+.form-group-minimal input:focus ~ label,
+.form-group-minimal input:not(:placeholder-shown) ~ label,
+.form-group-minimal textarea:focus ~ label,
+.form-group-minimal textarea:not(:placeholder-shown) ~ label {
+  top: -1.25rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  letter-spacing: 0.5em;
-  margin-top: 2rem;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
+  color: var(--gold-primary);
+}
+
+.form-actions-centered {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.submit-black-btn {
+  background: #1C1C1C;
+  color: white;
+  border: none;
+  padding: 1.5rem 3.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: none;
   transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
   border-radius: 2px;
 }
 
-.contact-submit::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
+.submit-black-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* ── SECTION 3: CONTACT DETAILS ────────────────── */
+.contact-details-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+  padding: 6rem 0;
+  border-top: 1px solid rgba(28, 28, 28, 0.05);
+}
+
+.detail-item {
+  margin-bottom: 3.5rem;
+}
+
+.detail-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 1rem;
+}
+
+.detail-content {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #1C1C1C;
+  font-weight: 400;
+}
+
+.trust-line-box {
+  padding: 3rem;
+  background: white;
+  border-radius: 2px;
+}
+
+.trust-text {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* ── SECTION 4: MAP ────────────────────────────── */
+.contact-map-section {
+  padding: 4rem 0;
+  margin-bottom: 6rem;
+}
+
+.map-placeholder {
   width: 100%;
-  height: 100%;
-  background: var(--gold-primary);
-  transition: left 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-  z-index: 0;
-}
-
-.contact-submit:hover::before {
-  left: 0;
-}
-
-.contact-submit span {
+  height: 380px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.03);
   position: relative;
-  z-index: 1;
+  overflow: hidden;
 }
 
-.contact-submit:hover {
-  box-shadow: 0 10px 30px -10px rgba(184, 149, 78, 0.4);
+.map-icon {
+  color: var(--gold-primary);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.map-coordinates {
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+}
+
+/* ── SECTION 5: FINAL CTA ──────────────────────── */
+.contact-final-cta {
+  padding: 6rem 0 10rem;
+  text-align: center;
+}
+
+.final-cta-title {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+
+.catalogue-btn {
+  background: none;
+  border: 1px solid #1C1C1C;
+  color: #1C1C1C;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 0 auto;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.catalogue-btn:hover {
+  background: #1C1C1C;
+  color: white;
 }
 
 /* ── Responsive ─────────────────────────────────── */
-@media (max-width: 1024px) {
-  .contact-grid {
+@media (max-width: 1000px) {
+  .contact-details-split, .form-grid {
     grid-template-columns: 1fr;
-    gap: 8rem;
-    padding: 0 8% 8rem;
+    gap: 5rem;
   }
-
-  .contact-hero {
-    padding: 18vh 8% 8rem;
+  .form-group-minimal.full-width {
+    grid-column: span 1;
   }
-
-  .contact-title {
-    font-size: 5rem;
+  .contact-container {
+    padding: 0 2rem;
   }
 }
