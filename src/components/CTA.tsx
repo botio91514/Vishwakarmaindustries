@@ -11,7 +11,7 @@ export const CTA: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo('.cta-solid-inner',
+      gsap.fromTo('.cta-solid-card',
         { y: 50, opacity: 0 },
         {
           y: 0, opacity: 1,

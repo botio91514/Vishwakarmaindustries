@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, BadgeCheck, Clock, ShieldCheck, Download, Layers, Ruler } from 'lucide-react';
+import { ArrowRight, BadgeCheck, ShieldCheck, Download, Layers, Ruler } from 'lucide-react';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { Particles } from '../components/Particles';
@@ -143,7 +143,7 @@ export default function Products() {
 
       // Product Cards Reveal
       const cards = gsap.utils.toArray<HTMLElement>('.catalog-item');
-      cards.forEach((card, index) => {
+      cards.forEach((card) => {
         gsap.fromTo(card,
           { y: 50, opacity: 0 },
           {
