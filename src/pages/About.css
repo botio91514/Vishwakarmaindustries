@@ -71,6 +71,8 @@
   margin-bottom: 3.5rem;
   overflow: hidden;
   letter-spacing: -0.02em;
+  width: 100%;
+  display: block;
 }
 
 .about-title .char {

@@ -74,75 +74,99 @@ export const Preloader = ({ onComplete }: { onComplete?: () => void }) => {
     }, [isLoaded, onComplete]);
 
     return (
-        <div className="preloader-wrapper" style={{
-            position: 'fixed',
-            inset: 0,
-            zIndex: 1000000,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            overflow: 'hidden',
-            backgroundColor: '#000'
-        }}>
-            <div className="preloader-overlay" style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                backgroundColor: 'var(--text-primary)',
-                zIndex: -1
-            }} />
+        <div className="preloader-wrapper">
+            <div className="preloader-overlay" />
             
-            <div className="preloader-content" style={{
-                textAlign: 'center',
-                color: 'var(--bg-secondary)',
-                zIndex: 1
-            }}>
-                <div className="preloader-logo" style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: '2.5rem',
-                    letterSpacing: '0.5em',
-                    fontWeight: 300,
-                    marginBottom: '3rem',
-                    overflow: 'hidden'
-                }}>
+            <div className="preloader-content">
+                <div className="preloader-logo">
                     VISHWAKARMA
                 </div>
                 
-                <div className="preloader-bar" style={{
-                    width: '350px',
-                    height: '1px',
-                    backgroundColor: 'rgba(255,255,255,0.05)',
-                    position: 'relative',
-                    margin: '0 auto'
-                }}>
-                    <div className="preloader-bar-fill" style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        height: '100%',
-                        width: `${progress}%`,
-                        backgroundColor: 'var(--gold-primary)',
-                        transition: 'width 0.4s cubic-bezier(0.1, 0, 0, 1)'
-                    }} />
+                <div className="preloader-bar">
+                    <div className="preloader-bar-fill" style={{ width: `${progress}%` }} />
                 </div>
                 
-                <div className="percent-container" style={{
-                   overflow: 'hidden',
-                   marginTop: '1.5rem'
-                }}>
-                    <div className="preloader-percent" style={{
-                        fontFamily: 'var(--font-body)',
-                        fontSize: '0.6rem',
-                        letterSpacing: '0.3em',
-                        opacity: 0.6,
-                        textTransform: 'uppercase'
-                    }}>
+                <div className="percent-container">
+                    <div className="preloader-percent">
                         {progress < 100 ? `Crafting Excellence ${progress}%` : "Ready to Discover"}
                     </div>
                 </div>
             </div>
+
+            <style>{`
+                .preloader-wrapper {
+                    position: fixed;
+                    inset: 0;
+                    z-index: 1000000;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    background-color: #1a1a1a;
+                }
+                .preloader-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #0c0c0c;
+                    z-index: -1;
+                }
+                .preloader-content {
+                    text-align: center;
+                    color: #fff;
+                    z-index: 1;
+                    width: 100%;
+                    padding: 0 1.5rem;
+                }
+                .preloader-logo {
+                    font-family: var(--font-display);
+                    font-size: clamp(1.2rem, 7vw, 2.5rem);
+                    letter-spacing: 0.4em;
+                    font-weight: 300;
+                    margin-bottom: 2.5rem;
+                    width: 100%;
+                    text-align: center;
+                }
+                .preloader-bar {
+                    width: 80%;
+                    max-width: 300px;
+                    height: 1px;
+                    background: rgba(255,255,255,0.05);
+                    position: relative;
+                    margin: 0 auto;
+                }
+                .preloader-bar-fill {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    background-color: var(--gold-primary);
+                    transition: width 0.4s cubic-bezier(0.1, 0, 0, 1);
+                }
+                .percent-container {
+                    overflow: hidden;
+                    marginTop: 1.5rem;
+                }
+                .preloader-percent {
+                    font-family: var(--font-body);
+                    font-size: 0.6rem;
+                    letter-spacing: 0.3em;
+                    opacity: 0.6;
+                    text-transform: uppercase;
+                    margin-top: 1.5rem;
+                }
+                @media (max-width: 480px) {
+                    .preloader-logo {
+                        letter-spacing: 0.3em;
+                        margin-bottom: 2rem;
+                    }
+                    .preloader-bar {
+                        max-width: 240px;
+                    }
+                }
+            `}</style>
         </div>
     );
 };

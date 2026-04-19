@@ -26,6 +26,13 @@
   z-index: 0;
 }
 
+@media (max-width: 768px) {
+  .footer-b-watermark {
+    font-size: 40vw;
+    opacity: 0.01;
+  }
+}
+
 .footer-b-container {
   position: relative;
   z-index: 10;
@@ -39,6 +46,12 @@
   grid-template-columns: 2fr 1fr 1fr;
   gap: 8rem;
   margin-bottom: 8rem;
+}
+
+@media (max-width: 1024px) {
+  .footer-main-grid {
+    gap: 4rem;
+  }
 }
 
 .footer-h2 {
