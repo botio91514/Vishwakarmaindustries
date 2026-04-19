@@ -8,6 +8,7 @@ import { Navbar } from '../components/Navbar';
 import { LuxuryAbout } from '../components/LuxuryAbout';
 import { ElasticGrid } from '../components/ElasticGrid';
 import { ManufacturingExcellence } from '../components/ManufacturingExcellence';
+import { Exhibitions } from '../components/Exhibitions';
 import { CTA } from '../components/CTA';
 import { ScrollingBanner } from '../components/ScrollingBanner';
 import { Footer } from '../components/Footer';
@@ -127,6 +128,14 @@ const Home = () => {
     };
   }, []);
 
+  const splitText = (text: string) => {
+    return text.split('').map((char, i) => (
+      <span key={i} className="char" style={{ display: 'inline-block' }}>
+        {char === ' ' ? '\u00A0' : char}
+      </span>
+    ));
+  };
+
   return (
     <>
       <Preloader onComplete={() => ScrollTrigger.refresh()} />
@@ -156,10 +165,10 @@ const Home = () => {
           <div className="hero-content">
             <h1 className="hero-title">
               <span className="line">
-                <span className="line-inner">VISHWAKARMA</span>
+                <span className="line-inner">{splitText('VISHWAKARMA')}</span>
               </span>
               <span className="line">
-                <span className="line-inner gold-text">INDUSTRIES</span>
+                <span className="line-inner gold-text">{splitText('INDUSTRIES')}</span>
               </span>
             </h1>
             <p className="hero-subtitle">Your Desire, We Design</p>
@@ -178,6 +187,7 @@ const Home = () => {
         <LuxuryAbout />
         <ElasticGrid />
         <ManufacturingExcellence />
+        <Exhibitions />
         <CTA />
         <ScrollingBanner />
         <Footer />

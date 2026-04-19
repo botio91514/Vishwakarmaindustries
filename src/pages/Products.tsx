@@ -1,310 +1,114 @@
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, BadgeCheck, ShieldCheck, Download, Layers, Ruler } from 'lucide-react';
+import { Search, ShoppingBag, Menu, X } from 'lucide-react';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
-import { Particles } from '../components/Particles';
-import './Products.css';
+import { SliderSection } from '../components/SliderSection';
+import '../components/CarouselProducts.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const productData = [
-  { 
-    id: 1, 
-    title: 'Acacia Chevron Sideboard', 
-    category: 'Storage', 
-    features: 'FSC Certified / Jodhpur Joinery', 
-    leadTime: '45-60 Days',
-    certification: 'Vriksh Standard',
-    finishing: 'Oil & Wax',
-    material: 'Grade-A Acacia',
-    img: 'https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?w=1200&q=90',
-    size: 'Large'
-  },
-  { 
-    id: 2, 
-    title: 'Forged Iron Dining Base', 
-    category: 'Ironwork', 
-    features: 'Hand Forged / Industrial Grade', 
-    leadTime: '30-40 Days',
-    certification: 'ISO 9001:2015',
-    finishing: 'Powder Coat',
-    material: 'Mild Steel / Wrought Iron',
-    img: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1200&q=90',
-    size: 'Medium'
-  },
-  { 
-    id: 3, 
-    title: 'Mango Wood Dining Set', 
-    category: 'Tables', 
-    features: 'Kiln Dried / Natural Finish', 
-    leadTime: '55-70 Days',
-    certification: 'EPCH Certified',
-    finishing: 'Matte NC',
-    material: 'Natural Mango Wood',
-    img: 'https://images.unsplash.com/photo-1604578762246-41134e37f9cc?w=1200&q=90',
-    size: 'Featured'
-  },
-  { 
-    id: 4, 
-    title: 'Boutique Hotel Console', 
-    category: 'Bespoke', 
-    features: 'Custom Specs / Brass Accents', 
-    leadTime: '90 Days+',
-    certification: 'Premium Custom',
-    finishing: 'High Gloss Lacquer',
-    material: 'Mixed Media',
-    img: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=90',
-    size: 'Medium'
-  },
-  { 
-    id: 5, 
-    title: 'Rattan & Teak Lounge Chair', 
-    category: 'Seating', 
-    features: 'Woven Cane / Ergonomic Frame', 
-    leadTime: '40-50 Days',
-    certification: 'Vriksh Standard',
-    finishing: 'Protective Matte',
-    material: 'Teak & Natural Cane',
-    img: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?w=1200&q=90',
-    size: 'Large'
-  },
-  { 
-    id: 6, 
-    title: 'Industrial Storage Rack', 
-    category: 'Storage', 
-    features: 'Powder-Coated / Heavy Duty', 
-    leadTime: '25-35 Days',
-    certification: 'Commercial Grade',
-    finishing: 'Industrial Enamel',
-    material: 'Cold Rolled Steel',
-    img: 'https://images.unsplash.com/photo-1599696848652-f0ff23bc911f?w=1200&q=90',
-    size: 'Medium'
-  },
-  { 
-    id: 7, 
-    title: 'Carved Royal Bedframe', 
-    category: 'Bespoke', 
-    features: 'Traditional Motifs / Rosewood', 
-    leadTime: '120 Days',
-    certification: 'Artisan Heritage',
-    finishing: 'Shellac Polish',
-    material: 'Indian Rosewood (Sheesham)',
-    img: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?w=1200&q=90',
-    size: 'Featured'
-  },
-  { 
-    id: 8, 
-    title: 'Minimalist Writing Desk', 
-    category: 'Tables', 
-    features: 'Knock-down Design / Export Ready', 
-    leadTime: '35-45 Days',
-    certification: 'Lacey Act Compliant',
-    finishing: 'Water-based Clear',
-    material: 'Sustainably Sourced Oak',
-    img: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=1200&q=90',
-    size: 'Large'
-  }
+  // SEATING
+  { id: 1, title: 'Urbane Leather Sofa', category: 'Seating', img: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80' },
+  { id: 2, title: 'Mid-Century Armchair', category: 'Seating', img: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=1200' },
+  { id: 3, title: 'Rattan Lounge Chair', category: 'Seating', img: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?w=1200' },
+  { id: 4, title: 'Midnight Velvet Chair', category: 'Seating', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200' },
+  { id: 5, title: 'Hand-Knotted Stool', category: 'Seating', img: 'https://images.unsplash.com/photo-1503602642458-232111445657?w=1200' },
+
+  // TABLES
+  { id: 6, title: 'Live Edge Walnut Table', category: 'Tables', img: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1200' },
+  { id: 7, title: 'Circular Marble Table', category: 'Tables', img: 'https://images.unsplash.com/photo-1577145716161-042861c8a164?w=1200' },
+  { id: 8, title: 'Brutalist Coffee Table', category: 'Tables', img: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=1200' },
+  { id: 9, title: 'Ash Writing Desk', category: 'Tables', img: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=1200' },
+  { id: 10, title: 'Mango Wood Dining Set', category: 'Tables', img: 'https://images.unsplash.com/photo-1604578762246-41134e37f9cc?w=1200' },
+
+  // STORAGE
+  { id: 11, title: 'Chevron Sideboard', category: 'Storage', img: 'https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?w=1200' },
+  { id: 12, title: 'Brass Inlay Credenza', category: 'Storage', img: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1200' },
+  { id: 13, title: 'Industrial Storage', category: 'Storage', img: 'https://images.unsplash.com/photo-1599696848652-f0ff23bc911f?w=1200' },
+  { id: 14, title: 'Sun-Bleached Wardrobe', category: 'Storage', img: 'https://images.unsplash.com/photo-1544457070-4cd773b4d71e?w=1200' },
+  { id: 15, title: 'Floating Oak Bookshelf', category: 'Storage', img: 'https://images.unsplash.com/photo-1616486701797-0f33f61038ec?w=1200' },
+
+  // BESPOKE
+  { id: 16, title: 'Boutique Hotel Console', category: 'Bespoke', img: 'https://images.unsplash.com/photo-1505635330303-d3f8479ad395?w=1200' },
+  { id: 17, title: 'Carved Royal Bed', category: 'Bespoke', img: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?w=1200' },
+  { id: 18, title: 'Monolithic Stone Plinth', category: 'Bespoke', img: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200' },
+  { id: 19, title: 'Velvet Headboard', category: 'Bespoke', img: 'https://images.unsplash.com/photo-1551298698-66b830a3f11c?w=1200' },
+
+  // IRONWORK
+  { id: 20, title: 'Forged Iron Base', category: 'Ironwork', img: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1200' },
+  { id: 21, title: 'Hammered Copper Sink', category: 'Ironwork', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200' },
+  { id: 22, title: 'Sculptural Planter', category: 'Ironwork', img: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=1200' },
+  { id: 23, title: 'Brass Chandelier', category: 'Ironwork', img: 'https://images.unsplash.com/photo-1542728928-1413eeae4d92?w=1200' }
 ];
 
-const categories = ['All', 'Storage', 'Tables', 'Seating', 'Ironwork', 'Bespoke'];
+const categories = ['All', 'Sofas', 'Chairs', 'Tables', 'Beds', 'Storage', 'Bespoke'];
 
 export default function Products() {
   const [activeFilter, setActiveFilter] = useState('All');
-  const [filteredProducts, setFilteredProducts] = useState(productData);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (activeFilter === 'All') {
-      setFilteredProducts(productData);
-    } else {
-      setFilteredProducts(productData.filter(p => p.category === activeFilter));
-    }
-  }, [activeFilter]);
-
-  useEffect(() => {
+    // Reveal top bar and first section
     const ctx = gsap.context(() => {
-      // Hero Animation - Cinematic entrance
-      gsap.fromTo('.catalog-hero-label', 
-        { y: 20, opacity: 0 }, 
-        { y: 0, opacity: 1, duration: 1, ease: 'power2.out' }
-      );
-      
-      gsap.fromTo('.catalog-hero-title .line-inner',
-        { y: '100%' },
-        { y: '0%', duration: 1.4, stagger: 0.1, ease: 'expo.out', delay: 0.2 }
-      );
-
-      gsap.fromTo('.catalog-hero-desc',
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: 'power2.out', delay: 0.5 }
-      );
-
-      // Product Cards Reveal
-      const cards = gsap.utils.toArray<HTMLElement>('.catalog-item');
-      cards.forEach((card) => {
-        gsap.fromTo(card,
-          { y: 50, opacity: 0 },
-          {
-            y: 0, opacity: 1,
-            duration: 1.2,
-            ease: 'expo.out',
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 92%',
-              toggleActions: 'play none none none'
-            }
-          }
-        );
-
-        // Subtle Parallax on scroll
-        const img = card.querySelector('.ci-main-img');
-        if (img) {
-          gsap.fromTo(img,
-            { y: '-10%' },
-            {
-              y: '10%',
-              scrollTrigger: {
-                trigger: card,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: true
-              }
-            }
-          );
-        }
+      gsap.to('.sticky-filter-bar', {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        delay: 0.5,
+        ease: 'expo.out'
       });
     }, containerRef);
-
     return () => ctx.revert();
-  }, [filteredProducts]);
+  }, []);
+
+  // Filter products by category for specialized sections
+  const chairs = productData.filter(p => p.category === 'Seating');
+  const tables = productData.filter(p => p.category === 'Tables');
+  const storage = productData.filter(p => p.category === 'Storage');
+  const bespoke = productData.filter(p => p.category === 'Bespoke');
+  const ironwork = productData.filter(p => p.category === 'Ironwork');
 
   return (
-    <div ref={containerRef} className="catalog-master-page">
-      <div className="noise-overlay" />
-      <Particles />
+    <div ref={containerRef} className="premium-products-container">
       <Navbar />
 
-      <div className="vertical-brand-tag">VISHWAKARMA INDUSTRIES // EST 2001</div>
+      <header className="catalog-header-minimal" style={{ padding: '8rem 5% 4rem', background: 'var(--p-white)' }}>
+        <span style={{ fontSize: '0.8rem', letterSpacing: '0.3em', color: 'var(--p-accent)', fontWeight: 600, textTransform: 'uppercase', marginBottom: '1rem', display: 'block' }}>
+          Collection 2024
+        </span>
+        <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: '4rem', margin: 0, color: 'var(--p-text-main)', lineHeight: 1.1 }}>
+          The Art of <br /> <i style={{ fontWeight: 400 }}>Modern Living.</i>
+        </h1>
+      </header>
 
-      <main className="catalog-master-container main-container">
-
-        {/* Cinematic Header Section */}
-        <header className="catalog-header-section">
-          <div className="catalog-header-left">
-            <span className="catalog-hero-label">Series 4.0 // The Export Catalog</span>
-            <h1 className="catalog-hero-title">
-              <span className="line">
-                <span className="line-inner">Refined</span>
-              </span>
-              <span className="line">
-                <span className="line-inner gold-text">Artistry.</span>
-              </span>
-            </h1>
-          </div>
-          <div className="catalog-header-right">
-            <p className="catalog-hero-desc">
-              A curated manifestation of Indian heritage and industrial precision. Engineered to exceed global manufacturing standards while honoring the soul of Jodhpur craftsmanship.
-            </p>
-            <div className="header-meta-badges">
-              <div className="meta-badge interactive">
-                <ShieldCheck size={16} />
-                <span>EPCH Certified</span>
-              </div>
-              <div className="meta-badge interactive">
-                <BadgeCheck size={16} />
-                <span>FSC Timber</span>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        {/* Fixed Navigation Bar */}
-        <div className="catalog-nav-sticky">
-          <nav className="catalog-filter-tabs">
-            {categories.map(cat => (
-              <button
-                key={cat}
-                className={`catalog-tab-link interactive magnetic ${activeFilter === cat ? 'active' : ''}`}
-                onClick={() => setActiveFilter(cat)}
-              >
-                <span className="tab-label">{cat}</span>
-                <span className="tab-count">
-                  {cat === 'All' ? productData.length : productData.filter(p => p.category === cat).length}
-                </span>
-              </button>
-            ))}
-          </nav>
-          <div className="catalog-actions">
-            <button className="download-btn interactive magnetic">
-              <Download size={14} />
-              <span>Series Book</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Structured Architectural Grid */}
-        <div className="catalog-proper-grid">
-          {filteredProducts.map((product) => (
-            <div key={product.id} className="catalog-item">
-              <div className="ci-visual-wrap interactive">
-                <div className="ci-img-inner-wrap">
-                  <img src={product.img} alt={product.title} className="ci-main-img" loading="lazy" />
-                  <div className="ci-material-sheen" />
-                </div>
-                
-                <div className="ci-hover-overlay">
-                  <div className="ci-specs-box">
-                    <div className="spec-row">
-                      <Layers size={14} />
-                      <span>{product.material}</span>
-                    </div>
-                    <div className="spec-row">
-                      <Ruler size={14} />
-                      <span>{product.finishing}</span>
-                    </div>
-                  </div>
-                  <a 
-                    href={`mailto:export@vishwakarma.com?subject=Wholesale Request: ${product.title}`}
-                    className="ci-request-btn interactive"
-                  >
-                    <span>Request Quotation</span>
-                    <ArrowRight size={14} />
-                  </a>
-                </div>
-              </div>
-              
-              <div className="ci-details">
-                <div className="ci-top-line">
-                  <span className="ci-category-tag">{product.category}</span>
-                  <span className="ci-model-num">#{String(product.id).padStart(3, '0')}</span>
-                </div>
-                <h2 className="ci-product-title">{product.title}</h2>
-                <div className="ci-bottom-line">
-                  <p className="ci-specs-short">{product.features}</p>
-                </div>
-              </div>
-            </div>
+      <div className="sticky-filter-bar" style={{ transform: 'translateY(-100%)', opacity: 0 }}>
+        <div className="filter-group">
+          {categories.slice(0, 5).map(cat => (
+            <span
+              key={cat}
+              className={`filter-item ${activeFilter === cat ? 'active' : ''}`}
+              onClick={() => setActiveFilter(cat)}
+            >
+              {cat}
+            </span>
           ))}
         </div>
 
-        {/* B2B Trust Bar — Minimalist */}
-        <section className="catalog-trust-bar">
-          <div className="trust-col">
-            <h3>Shipment Ready</h3>
-            <p>Direct inland container port delivery to global hubs via ICD Luni.</p>
-          </div>
-          <div className="trust-col">
-            <h3>Export Quality</h3>
-            <p>100% Seasoned and chemically treated timber for maximum durability.</p>
-          </div>
-          <div className="trust-col">
-            <h3>Mixed MOQs</h3>
-            <p>Scalable manufacturing lines to accommodate boutique and volume orders.</p>
-          </div>
-        </section>
+        <div className="filter-group">
+          <span className="filter-item"><Search size={20} /></span>
+          <span className="filter-item"><ShoppingBag size={20} /></span>
+        </div>
+      </div>
 
+      <main>
+        <SliderSection title="Signature Seating" products={chairs} />
+        <SliderSection title="Handcrafted Tables" products={tables} />
+        <SliderSection title="Elegant Storage" products={storage} />
+        <SliderSection title="Bespoke Collection" products={bespoke} />
+        <SliderSection title="Artisan Ironwork" products={ironwork} />
       </main>
 
       <Footer />

@@ -15,24 +15,30 @@ export default function Contact() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // 1. Hero Reveal
-      gsap.fromTo('.hero-reveal .line-inner',
-        { y: '100%', opacity: 0 },
-        { y: '0%', opacity: 1, duration: 1.5, stagger: 0.15, ease: 'power4.out', delay: 0.2 }
-      );
+      const tl = gsap.timeline({ delay: 0.2 });
 
-      gsap.fromTo('.hero-subtext',
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out', delay: 0.6 }
-      );
+      tl.from('.hero-title-main .char', {
+        y: 100,
+        opacity: 0,
+        stagger: 0.04,
+        duration: 1.5,
+        ease: 'power4.out'
+      })
+      .from('.hero-subtext', {
+        y: 20,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'power3.out'
+      }, '-=1');
 
       // 2. Sections Reveal
       const sections = gsap.utils.toArray<HTMLElement>('.contact-section-reveal');
       sections.forEach((sec) => {
         gsap.from(sec, {
-          y: 40,
+          y: 60,
           opacity: 0,
-          duration: 1.2,
-          ease: 'power3.out',
+          duration: 1.5,
+          ease: 'expo.out',
           scrollTrigger: {
             trigger: sec,
             start: 'top 85%'
@@ -44,6 +50,14 @@ export default function Contact() {
 
     return () => ctx.revert();
   }, []);
+
+  const splitText = (text: string) => {
+    return text.split('').map((char, i) => (
+      <span key={i} className="char" style={{ display: 'inline-block' }}>
+        {char === ' ' ? '\u00A0' : char}
+      </span>
+    ));
+  };
 
   return (
     <div ref={containerRef} className="contact-page">
@@ -60,10 +74,10 @@ export default function Contact() {
           <div className="hero-content-centered">
             <h1 className="hero-title-main">
               <span className="line">
-                <span className="line-inner">Let’s Build Something</span>
+                <span className="line-inner">{splitText('Let’s Build Something')}</span>
               </span>
               <span className="line">
-                <span className="line-inner gold-text">Timeless.</span>
+                <span className="line-inner gold-text">{splitText('Timeless.')}</span>
               </span>
             </h1>
             <p className="hero-subtext">
@@ -96,8 +110,8 @@ export default function Contact() {
                 </div>
 
                 <div className="form-group-minimal">
-                  <select id="project-type" required>
-                    <option value="" disabled selected>Project Type</option>
+                  <select id="project-type" defaultValue="" required>
+                    <option value="" disabled>Project Type</option>
                     <option value="residential">Residential</option>
                     <option value="commercial">Commercial / Office</option>
                     <option value="hospitality">Hospitality / Hotel</option>

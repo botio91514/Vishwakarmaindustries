@@ -1,0 +1,263 @@
+.ex-section {
+  position: relative;
+  padding: 160px 0;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.ex-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+/* ── Header ── */
+.ex-header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 100px;
+}
+
+.ex-header-left {
+  max-width: 600px;
+}
+
+.ex-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: var(--gold-primary);
+  margin-bottom: 24px;
+}
+
+.ex-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 84px);
+  font-weight: 300;
+  line-height: 0.95;
+  color: var(--text-primary);
+}
+
+.ex-header-right {
+  max-width: 400px;
+  padding-bottom: 10px;
+}
+
+.ex-subtitle {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+/* ── Main Showcase ── */
+.ex-main-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+  margin-bottom: 120px;
+}
+
+/* Feature Card (EPCH) */
+.ex-feature-card {
+  grid-column: span 8;
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ex-side-cards {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.ex-side-card {
+  height: calc(350px - 15px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Common Card Styles */
+.ex-card-inner {
+  position: absolute;
+  inset: 0;
+  transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.ex-card-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+  filter: saturate(0.8) contrast(1.1);
+}
+
+.ex-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.1) 50%,
+    rgba(0,0,0,0.85) 100%
+  );
+  z-index: 2;
+  transition: opacity 0.6s ease;
+}
+
+.ex-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 50px;
+  z-index: 3;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.ex-feature-card:hover .ex-card-info,
+.ex-side-card:hover .ex-card-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.ex-feature-card:hover .ex-card-img,
+.ex-side-card:hover .ex-card-img {
+  transform: scale(1.08);
+}
+
+.ex-card-label {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 20px;
+}
+
+.ex-card-h {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 42px);
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.ex-card-p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 450px;
+}
+
+/* ── Secondary Grid ── */
+.ex-bottom-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.ex-small-card {
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Memberships Section ── */
+.ex-members-row {
+  margin-top: 140px;
+  padding-top: 80px;
+  border-top: 1px solid var(--glass-border);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.ex-member-item {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.ex-member-logo-wrap {
+  width: 180px;
+  height: 120px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.6s ease;
+  flex-shrink: 0;
+}
+
+.ex-member-item:hover .ex-member-logo-wrap {
+  border-color: var(--gold-primary);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.ex-member-logo-wrap img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.ex-member-text {
+  max-width: 400px;
+}
+
+.ex-member-h {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.ex-member-p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+  .ex-main-gallery {
+    grid-template-columns: 1fr;
+  }
+  .ex-feature-card, .ex-side-cards {
+    grid-column: span 1;
+  }
+  .ex-bottom-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ex-section { padding: 80px 0; }
+  .ex-header-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  .ex-members-row {
+    flex-direction: column;
+    gap: 60px;
+    align-items: flex-start;
+  }
+  .ex-bottom-row {
+    grid-template-columns: 1fr;
+  }
+  .ex-card-info { padding: 30px; opacity: 1; transform: translateY(0); }
+}

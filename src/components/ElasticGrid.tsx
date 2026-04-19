@@ -9,31 +9,31 @@ gsap.registerPlugin(ScrollTrigger);
 const columns: { img: string; title: string; category: string }[][] = [
   // Column 1
   [
-    { img: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=600&q=80', title: 'Obsidian Desk', category: 'Executive' },
-    { img: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80', title: 'Imperial Bed', category: 'Rest' },
-    { img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80', title: 'Velvet Chair', category: 'Lounge' },
-    { img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80', title: 'Royal Sofa', category: 'Velvet' },
+    { img: new URL('../assets/products/1.jpeg', import.meta.url).href, title: 'Precision Lathe', category: 'Machining' },
+    { img: new URL('../assets/products/2.jpeg', import.meta.url).href, title: 'Industrial Mill', category: 'Heavy Duty' },
+    { img: new URL('../assets/products/3.jpeg', import.meta.url).href, title: 'CNC Center', category: 'Automation' },
+    { img: new URL('../assets/products/4.jpeg', import.meta.url).href, title: 'Forge Press', category: 'Metalwork' },
   ],
   // Column 2
   [
-    { img: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&q=80', title: 'Aeon Lounge', category: 'Comfort' },
-    { img: 'https://images.unsplash.com/photo-1616137466211-f939a420be84?w=600&q=80', title: 'Studio Corner', category: 'Nordic' },
-    { img: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80', title: 'White Canvas', category: 'Minimal' },
-    { img: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600&q=80', title: 'Luna Chair', category: 'Sculptural' },
+    { img: new URL('../assets/products/5.jpeg', import.meta.url).href, title: 'Drilling Station', category: 'Precision' },
+    { img: new URL('../assets/products/6.jpeg', import.meta.url).href, title: 'Hydraulic Unit', category: 'Power' },
+    { img: new URL('../assets/products/7.jpeg', import.meta.url).href, title: 'Grinding Hub', category: 'Finishing' },
+    { img: new URL('../assets/products/8.jpeg', import.meta.url).href, title: 'Surface Grinder', category: 'Tools' },
   ],
   // Column 3
   [
-    { img: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80', title: 'Nova Dining', category: 'Heritage' },
-    { img: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&q=80', title: 'Zenith Unit', category: 'Modern' },
-    { img: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=600&q=80', title: 'Warm Palette', category: 'Classic' },
-    { img: 'https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?w=600&q=80', title: 'Eclipse Desk', category: 'Minimalist' },
+    { img: new URL('../assets/products/9.jpeg', import.meta.url).href, title: 'Assembly Line', category: 'Production' },
+    { img: new URL('../assets/products/11.jpeg', import.meta.url).href, title: 'Welding Station', category: 'Fabrication' },
+    { img: new URL('../assets/products/12.jpeg', import.meta.url).href, title: 'Cutting System', category: 'Heavy Duty' },
+    { img: new URL('../assets/products/13.jpeg', import.meta.url).href, title: 'Polishing Unit', category: 'Detailing' },
   ],
   // Column 4
   [
-    { img: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80', title: 'The Sofa', category: 'Living' },
-    { img: 'https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?w=600&q=80', title: 'Handcrafted', category: 'Artisanal' },
-    { img: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80', title: 'Classic Bureau', category: 'Legacy' },
-    { img: 'https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?w=600&q=80', title: 'Marble Plinth', category: 'Bespoke' },
+    { img: new URL('../assets/products/14.jpeg', import.meta.url).href, title: 'Quality Control', category: 'Standard' },
+    { img: new URL('../assets/products/15.jpeg', import.meta.url).href, title: 'Inventory Hub', category: 'Logistics' },
+    { img: new URL('../assets/products/16.jpeg', import.meta.url).href, title: 'Material Handling', category: 'Operations' },
+    { img: new URL('../assets/products/1.jpeg', import.meta.url).href, title: 'Advanced Machining', category: 'Elite' },
   ],
 ];
 

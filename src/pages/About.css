@@ -7,6 +7,21 @@
   color: var(--text-primary);
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* ── Grain Overlay (Awwwards Vibe) ────────────────── */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: url("https://res.cloudinary.com/du7x7u8ms/image/upload/v1619616013/grain_t0vszu.png");
+  background-repeat: repeat;
 }
 
 /* ── Hero Section ────────────────────────────────── */
@@ -50,15 +65,25 @@
 
 .about-title {
   font-family: var(--font-display);
-  font-size: clamp(4rem, 8vw, 8rem);
-  line-height: 0.95;
+  font-size: clamp(3rem, 7.5vw, 7.5rem);
+  line-height: 0.85;
   font-weight: 300;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
+  overflow: hidden;
+  letter-spacing: -0.02em;
 }
 
-.about-title em {
-  font-style: italic;
-  font-family: var(--font-display);
+.about-title .char {
+  display: inline-block;
+  will-change: transform;
+}
+
+.deco-line {
+  width: 120px;
+  height: 1px;
+  background: var(--gold-primary);
+  margin-top: 2rem;
+  transform-origin: left;
 }
 
 .about-description {
@@ -108,7 +133,182 @@
 .ph-text {
   font-size: 0.95rem;
   line-height: 1.7;
-  opacity: 0.6;
+  opacity: 0.7;
+}
+
+/* ── Visionary Section Enhanced ───────────────────── */
+.visionary-section {
+  padding: 20vh 8%;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.visionary-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(184, 149, 78, 0.03), transparent);
+}
+
+.visionary-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12rem;
+  align-items: center;
+}
+
+.visionary-content {
+  max-width: 550px;
+}
+
+.visionary-name {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.visionary-quote {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--gold-primary);
+  margin-bottom: 3rem;
+  line-height: 1.4;
+}
+
+.visionary-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.visionary-image-wrap {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 2px;
+  clip-path: inset(0 0 0 0);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+}
+
+.visionary-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.visionary-image-wrap:hover .visionary-img {
+  transform: scale(1.05);
+}
+
+/* ── Ideas Section ──────────────────────────────── */
+.about-ideas {
+  padding: 15vh 6%;
+  background: #fff;
+  text-align: center;
+}
+
+.ideas-header {
+  margin-bottom: 8rem;
+}
+
+.ideas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.idea-card {
+  padding: 4rem 3rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.idea-card:hover {
+  transform: translateY(-15px);
+  border-color: var(--gold-primary);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+.idea-number {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-family: var(--font-display);
+  font-size: 8rem;
+  opacity: 0.03;
+  color: var(--gold-primary);
+  line-height: 1;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.idea-card:hover .idea-number {
+  opacity: 0.08;
+}
+
+.idea-icon-wrap {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 2.5rem;
+  color: var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.idea-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.idea-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.idea-title em {
+  font-style: italic;
+  font-family: var(--font-display);
+  color: var(--gold-primary);
+}
+
+.idea-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  opacity: 0.5;
+  margin-bottom: 2rem;
+}
+
+.idea-accent-line {
+  margin-top: auto;
+  width: 40px;
+  height: 2px;
+  background: var(--gold-primary);
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.idea-card:hover .idea-accent-line {
+  width: 100%;
 }
 
 /* ── Ancestral Journey (Timeline) ────────────────── */
@@ -208,6 +408,55 @@
   line-height: 1.4;
 }
 
+/* ── Magnetic CTA Section ────────────────────────── */
+.about-cta-section {
+  padding: 20vh 6%;
+  background: var(--bg-primary);
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 300;
+  margin-bottom: 4rem;
+}
+
+.magnetic-btn {
+  position: relative;
+  display: inline-flex;
+  padding: 1.8rem 4rem;
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: color 0.4s ease;
+  z-index: 1;
+}
+
+.btn-hover-bg {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gold-primary);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.magnetic-btn:hover {
+  color: #fff;
+}
+
+.magnetic-btn:hover .btn-hover-bg {
+  transform: translateY(-100%);
+}
+
 /* ── Responsive ─────────────────────────────────── */
 @media (max-width: 1400px) {
   .about-hero {
@@ -268,6 +517,15 @@
     width: 150px;
     height: 150px;
   }
+  .visionary-container,
+  .ideas-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .visionary-content {
+    max-width: 100%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -279,5 +537,11 @@
   }
   .ph-title {
     font-size: 1.75rem;
+  }
+  .visionary-name {
+    font-size: 2.5rem;
+  }
+  .idea-card {
+    padding: 2rem 1.5rem;
   }
 }
