@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingCart, Maximize2 } from 'lucide-react';
+import { Maximize2 } from 'lucide-react';
 
 interface ProductCardProps {
   id: number | string;
