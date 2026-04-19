@@ -530,18 +530,20 @@
 
 @media (max-width: 480px) {
   .about-title {
-    font-size: 3.25rem;
+    font-size: 2.2rem;
+    line-height: 1;
+    letter-spacing: -0.01em;
   }
   .about-hero-media {
-    height: 45vh;
+    height: 40vh;
   }
   .ph-title {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
   }
   .visionary-name {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .idea-card {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.25rem;
   }
 }

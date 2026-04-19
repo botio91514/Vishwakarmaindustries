@@ -182,7 +182,7 @@ export default function About() {
               </div>
             </div>
             <div className="visionary-image-wrap">
-              <img src="https://images.unsplash.com/photo-1558444479-79a071060965?w=1200&q=80" alt="Founder MalaRam Suthar" className="visionary-img" />
+              <img src="https://images.unsplash.com/photo-1595246140625-573b715d11dc?w=1200&q=80" alt="Founder MalaRam Suthar" className="visionary-img" />
             </div>
           </div>
         </section>

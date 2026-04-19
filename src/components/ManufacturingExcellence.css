@@ -193,14 +193,20 @@
 
 @media (max-width: 768px) {
   .mfg-section {
-    padding: 4rem 0;
+    padding: 6rem 0;
   }
   .mfg-container {
     padding: 0 1.5rem;
   }
   .mfg-title {
     font-size: 2.25rem;
+    margin-bottom: 1.5rem;
   }
-  .mfg-item-header { gap: 1rem; margin-bottom: 1.5rem; }
+  .mfg-intro {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+  .mfg-item-header { gap: 1rem; margin-bottom: 2rem; }
   .mfg-item-title { font-size: 1.25rem; }
+  .mfg-item-img-wrap { aspect-ratio: 16/9; }
 }

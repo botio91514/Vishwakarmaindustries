@@ -254,11 +254,38 @@
   }
 
   .la-vriksh-logo-wrap {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 
   .la-section {
     padding: 6rem 0;
+  }
+
+  .la-stats {
+    gap: 2rem;
+  }
+
+  .la-stat-num {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .la-stats {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .la-title {
+    font-size: 2.75rem;
+  }
+
+  .la-container {
+    padding: 0 1.5rem;
+  }
+  
+  .la-content {
+    padding-left: 1.5rem;
   }
 }
