@@ -3,6 +3,15 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Exhibitions.css';
 
+// Import images
+import fair1 from '../assets/Delhi Fair1.jpeg';
+import fair2 from '../assets/delhiFair2.jpeg';
+import fair3 from '../assets/expo.jpeg';
+import fair4 from '../assets/e1.jpeg';
+import fair5 from '../assets/e2.jpeg';
+import fair6 from '../assets/e3.jpeg';
+import fair7 from '../assets/e4.jpeg';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const fairGallery = [
@@ -12,7 +21,7 @@ const fairGallery = [
     type: "feature",
     label: "Main Showcase",
     description: "Our dedicated space at the IHGF Delhi Fair, featuring our finest collections of industrial and handcrafted furniture for global markets.",
-    img: "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?w=1600&q=80"
+    img: fair1
   },
   {
     id: 2,
@@ -20,7 +29,7 @@ const fairGallery = [
     type: "side",
     label: "B2B Meetings",
     description: "Engaging with international buyers and designers from over 100 countries during the fair.",
-    img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1000&q=80"
+    img: fair2
   },
   {
     id: 3,
@@ -28,7 +37,7 @@ const fairGallery = [
     type: "side",
     label: "Detailing",
     description: "Close-up demonstrations of our finishing techniques that caught the eyes of export professionals.",
-    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&q=80"
+    img: fair3
   },
   {
     id: 4,
@@ -36,7 +45,7 @@ const fairGallery = [
     type: "bottom",
     label: "Excellence",
     description: "Recognition of our commitment to sustainable and innovative manufacturing.",
-    img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"
+    img: fair4
   },
   {
     id: 5,
@@ -44,7 +53,7 @@ const fairGallery = [
     type: "bottom",
     label: "Experience",
     description: "Creating an immersive environment for guests to experience the texture and durability of our pieces.",
-    img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
+    img: fair5
   },
   {
     id: 6,
@@ -52,7 +61,7 @@ const fairGallery = [
     type: "bottom",
     label: "Collaborations",
     description: "Building long-term partnerships with retailers and boutique curators across the globe.",
-    img: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"
+    img: fair6
   },
   {
     id: 7,
@@ -60,7 +69,7 @@ const fairGallery = [
     type: "bottom",
     label: "Roadmap",
     description: "Discussing the roadmap for eco-friendly industrial manufacturing at the Delhi Expo.",
-    img: "https://images.unsplash.com/photo-1616137466211-f939a420be84?w=800&q=80"
+    img: fair7
   }
 ];
 
@@ -123,7 +132,7 @@ export const Exhibitions: React.FC = () => {
           </div>
           <div className="ex-header-right">
             <p className="ex-subtitle">
-              Showcasing the soul of Jodhpur’s industrial craft on the world’s biggest stage. 
+              Showcasing the soul of Jodhpur’s industrial craft on the world’s biggest stage.
               Our journey at the EPCH Fair is a testament to our global vision and heritage roots.
             </p>
           </div>
@@ -134,8 +143,8 @@ export const Exhibitions: React.FC = () => {
           {/* Main Feature */}
           <div className="ex-feature-card">
             <div className="ex-card-inner">
-              <div 
-                className="ex-card-img" 
+              <div
+                className="ex-card-img"
                 style={{ backgroundImage: `url(${fairGallery[0].img})` }}
               />
               <div className="ex-card-overlay" />
@@ -150,8 +159,8 @@ export const Exhibitions: React.FC = () => {
           {/* Side Cards */}
           <div className="ex-side-cards">
             <div className="ex-side-card">
-              <div 
-                className="ex-card-img" 
+              <div
+                className="ex-card-img"
                 style={{ backgroundImage: `url(${fairGallery[1].img})` }}
               />
               <div className="ex-card-overlay" />
@@ -162,8 +171,8 @@ export const Exhibitions: React.FC = () => {
               </div>
             </div>
             <div className="ex-side-card">
-              <div 
-                className="ex-card-img" 
+              <div
+                className="ex-card-img"
                 style={{ backgroundImage: `url(${fairGallery[2].img})` }}
               />
               <div className="ex-card-overlay" />
@@ -181,14 +190,14 @@ export const Exhibitions: React.FC = () => {
           {fairGallery.slice(3).map(item => (
             <div key={item.id} className="ex-small-card">
               <div className="ex-card-inner">
-                <div 
-                  className="ex-card-img" 
+                <div
+                  className="ex-card-img"
                   style={{ backgroundImage: `url(${item.img})` }}
                 />
                 <div className="ex-card-overlay" />
                 <div className="ex-card-info">
                   <span className="ex-card-label">{item.label}</span>
-                  <h3 className="ex-card-h" style={{fontSize: '24px'}}>{item.title}</h3>
+                  <h3 className="ex-card-h" style={{ fontSize: '24px' }}>{item.title}</h3>
                 </div>
               </div>
             </div>
@@ -209,7 +218,7 @@ export const Exhibitions: React.FC = () => {
 
           <div className="ex-member-item">
             <div className="ex-member-logo-wrap">
-               <img src={new URL('../assets/jhea.jpg', import.meta.url).href} alt="JHEA Logo" />
+              <img src={new URL('../assets/jhea.jpg', import.meta.url).href} alt="JHEA Logo" />
             </div>
             <div className="ex-member-text">
               <h4 className="ex-member-h">JHEA Member</h4>
@@ -219,7 +228,7 @@ export const Exhibitions: React.FC = () => {
 
           <div className="ex-member-item">
             <div className="ex-member-logo-wrap">
-               <img src={new URL('../assets/Vriksh.png', import.meta.url).href} alt="Vriksh Certification" />
+              <img src={new URL('../assets/Vriksh.png', import.meta.url).href} alt="Vriksh Certification" />
             </div>
             <div className="ex-member-text">
               <h4 className="ex-member-h">Vriksh Certified</h4>

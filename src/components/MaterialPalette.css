@@ -1,0 +1,172 @@
+.mp-section {
+  background: var(--bg-secondary);
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.mp-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.mp-header {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.mp-header-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.mp-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 1.5rem;
+  display: block;
+  font-weight: 600;
+}
+
+.mp-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 4vw, 4.5rem);
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.mp-title em {
+  font-style: italic;
+  color: var(--gold-primary);
+}
+
+.mp-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--gold-primary);
+  margin: 2rem auto;
+}
+
+.mp-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.mp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.mp-card {
+  background: var(--bg-primary);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+  border: 1px solid rgba(184, 149, 78, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mp-card:hover {
+  transform: translateY(-10px);
+}
+
+.mp-img-wrap {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.mp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.mp-card:hover .mp-img {
+  transform: scale(1.1);
+}
+
+.mp-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, transparent 60%);
+}
+
+.mp-scientific {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  color: white;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  opacity: 0.8;
+}
+
+.mp-info {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.mp-mat-name {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.mp-mat-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.mp-properties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.mp-prop-tag {
+  font-size: 0.65rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(184, 149, 78, 0.05);
+  border: 1px solid rgba(184, 149, 78, 0.15);
+  border-radius: 100px;
+  color: var(--gold-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 1024px) {
+  .mp-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .mp-container {
+    padding: 0 2rem;
+  }
+
+  .mp-img-wrap {
+    height: 250px;
+  }
+}

@@ -25,18 +25,24 @@ export const ScrollingBanner: React.FC = () => {
     <div ref={bannerRef} className="scrolling-banner-container">
       <div className="banner-track">
         <div className="banner-content">
-          <span>LEGACY OF JODHPUR</span>
-          <span>CRAFTING THE FUTURE</span>
-          <span>ESTABLISHED 2001</span>
-          <span>WORLDWIDE EXPORTS</span>
-          <span>ARCHITECTURAL PRECISION</span>
+          <span>VISHWAKARMA INDUSTRIES JODHPUR</span>
+          <span>ARTISANAL HANDCRAFTED FURNITURE</span>
+          <span>GLOBAL EXPORTS SINCE 1994</span>
+          <span>INDUSTRIAL & CONTEMPORARY DESIGNS</span>
+          <span>BORN IN THE BLUE CITY</span>
+          <span>SUSTAINABLE VRIKSH CERTIFIED WOOD</span>
+          <span>PREMIUM QUALITY MANUFACTURING</span>
+          <span>JODHPUR'S HERITAGE TO THE WORLD</span>
         </div>
         <div className="banner-content">
-          <span>LEGACY OF JODHPUR</span>
-          <span>CRAFTING THE FUTURE</span>
-          <span>ESTABLISHED 2001</span>
-          <span>WORLDWIDE EXPORTS</span>
-          <span>ARCHITECTURAL PRECISION</span>
+          <span>VISHWAKARMA INDUSTRIES JODHPUR</span>
+          <span>ARTISANAL HANDCRAFTED FURNITURE</span>
+          <span>GLOBAL EXPORTS SINCE 1994</span>
+          <span>INDUSTRIAL & CONTEMPORARY DESIGNS</span>
+          <span>BORN IN THE BLUE CITY</span>
+          <span>SUSTAINABLE VRIKSH CERTIFIED WOOD</span>
+          <span>PREMIUM QUALITY MANUFACTURING</span>
+          <span>JODHPUR'S HERITAGE TO THE WORLD</span>
         </div>
       </div>
     </div>

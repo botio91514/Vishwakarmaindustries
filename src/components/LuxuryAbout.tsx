@@ -162,10 +162,10 @@ export const LuxuryAbout: React.FC = () => {
               </div>
               <div className="la-stat">
                 <div className="la-stat-header">
-                  <span className="la-stat-num" data-target="500">0</span>
+                  <span className="la-stat-num" data-target="50">0</span>
                   <span className="la-stat-plus">+</span>
                 </div>
-                <span className="la-stat-label">Export Countries</span>
+                <span className="la-stat-label">Global Markets</span>
               </div>
               <div className="la-stat">
                 <div className="la-stat-header">

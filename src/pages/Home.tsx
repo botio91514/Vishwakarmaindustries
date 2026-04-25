@@ -11,6 +11,7 @@ import { ManufacturingExcellence } from '../components/ManufacturingExcellence';
 import { Exhibitions } from '../components/Exhibitions';
 import { CTA } from '../components/CTA';
 import { ScrollingBanner } from '../components/ScrollingBanner';
+import { MaterialPalette } from '../components/MaterialPalette';
 import { Footer } from '../components/Footer';
 import { Preloader } from '../components/Preloader';
 import '../index.css';
@@ -171,7 +172,7 @@ const Home = () => {
                 <span className="line-inner gold-text">{splitText('INDUSTRIES')}</span>
               </span>
             </h1>
-            <p className="hero-subtitle">Your Desire, We Design</p>
+            <p className="hero-subtitle">Your Desire , We Design.</p>
             <Link to="/products" className="hero-cta interactive magnetic">
               Explore Collection
               <ArrowRight size={18} />
@@ -185,6 +186,7 @@ const Home = () => {
         </section>
 
         <LuxuryAbout />
+        <MaterialPalette />
         <ElasticGrid />
         <ManufacturingExcellence />
         <Exhibitions />

@@ -2,6 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './ManufacturingExcellence.css';
+import woodImg from '../assets/woodfab.jpg';
+import ironImg from '../assets/iron.jpg';
+import expoImg from '../assets/export.jpg';
+import bespokeImg from '../assets/oemodm.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,21 +15,28 @@ const capabilities = [
     title: "Wood Fabrication",
     tagline: "Vriksh-Certified Timber",
     desc: "Sourcing only ethical woods, our artisans employ generational Suthar joinery techniques to craft enduring structures with impeccable, hand-rubbed finishes.",
-    img: "https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?w=1200&q=80"
+    img: woodImg
   },
   {
     id: "02",
     title: "Iron Hand Forging",
     tagline: "Ancestral Ironwork",
     desc: "From industrial frameworks to delicate accents, every iron component is fire-forged by hand in Jodhpur, ensuring unmatched tensile strength and unique patina.",
-    img: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=1200&q=80"
+    img: ironImg
   },
   {
     id: "03",
     title: "Global Procurement",
     tagline: "40' HQ Container Output",
     desc: "Operating with high-capacity infrastructure, we deliver seamless wholesale logistics and bespoke production to core markets including Germany, UK, Saudi Arabia, and the USA.",
-    img: "https://images.unsplash.com/photo-1558231221-ca1af98bb02b?w=1200&q=80"
+    img: expoImg
+  },
+  {
+    id: "04",
+    title: "Bespoke OEM/ODM",
+    tagline: "Custom Large-Scale Projects",
+    desc: "From boutique hotels to global retail chains, we provide comprehensive OEM/ODM solutions, translating complex design blueprints into physical reality with engineering precision.",
+    img: bespokeImg
   }
 ];
 
@@ -37,7 +48,7 @@ export const ManufacturingExcellence: React.FC = () => {
       // Dynamic parallax: stays perfectly bounded inside the section
       ScrollTrigger.matchMedia({
         "(min-width: 1025px)": () => {
-          gsap.fromTo('.mfg-sticky-content', 
+          gsap.fromTo('.mfg-sticky-content',
             { y: 0 },
             {
               y: () => {
@@ -63,12 +74,12 @@ export const ManufacturingExcellence: React.FC = () => {
       // Reveal list items
       const items = gsap.utils.toArray<HTMLElement>('.mfg-item');
       items.forEach(item => {
-        gsap.fromTo(item.querySelector('.mfg-item-body'), 
+        gsap.fromTo(item.querySelector('.mfg-item-body'),
           { opacity: 0, y: 30 },
           {
-            opacity: 1, 
-            y: 0, 
-            duration: 1, 
+            opacity: 1,
+            y: 0,
+            duration: 1,
             ease: 'power2.out',
             scrollTrigger: {
               trigger: item,
@@ -85,7 +96,7 @@ export const ManufacturingExcellence: React.FC = () => {
   return (
     <section ref={sectionRef} className="mfg-section">
       <div className="mfg-container">
-        
+
         {/* Left Sticky Column */}
         <div className="mfg-sidebar">
           <div className="mfg-sticky-content">
@@ -103,24 +114,24 @@ export const ManufacturingExcellence: React.FC = () => {
         {/* Right Scroll Column */}
         <div className="mfg-content-list">
           {capabilities.map((item) => (
-             <div key={item.id} className="mfg-item">
-               <div className="mfg-item-header">
-                 <span className="mfg-item-num">{item.id}</span>
-                 <h3 className="mfg-item-title">{item.title}</h3>
-               </div>
-               <div className="mfg-item-body">
-                 <div className="mfg-item-img-wrap">
-                   <img src={item.img} alt={item.title} />
-                 </div>
-                 <div className="mfg-item-text-wrap">
-                   <div className="mfg-item-tag-wrapper">
-                     <span className="mfg-item-tagline">{item.tagline}</span>
-                     <div className="mfg-item-line"></div>
-                   </div>
-                   <p className="mfg-item-desc">{item.desc}</p>
-                 </div>
-               </div>
-             </div>
+            <div key={item.id} className="mfg-item">
+              <div className="mfg-item-header">
+                <span className="mfg-item-num">{item.id}</span>
+                <h3 className="mfg-item-title">{item.title}</h3>
+              </div>
+              <div className="mfg-item-body">
+                <div className="mfg-item-img-wrap">
+                  <img src={item.img} alt={item.title} />
+                </div>
+                <div className="mfg-item-text-wrap">
+                  <div className="mfg-item-tag-wrapper">
+                    <span className="mfg-item-tagline">{item.tagline}</span>
+                    <div className="mfg-item-line"></div>
+                  </div>
+                  <p className="mfg-item-desc">{item.desc}</p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
