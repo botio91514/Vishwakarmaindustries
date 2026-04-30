@@ -5,8 +5,8 @@ import './Exhibitions.css';
 
 // Import images
 import fair1 from '../assets/Delhi Fair1.jpeg';
-import fair2 from '../assets/delhiFair2.jpeg';
-import fair3 from '../assets/expo.jpeg';
+import fair2 from '../assets/delhifair2.jpeg';
+import fair3 from '../assets/Expo.jpeg';
 import fair4 from '../assets/e1.jpeg';
 import fair5 from '../assets/e2.jpeg';
 import fair6 from '../assets/e3.jpeg';
