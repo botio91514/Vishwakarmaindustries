@@ -7,21 +7,31 @@ import { Footer } from '../components/Footer';
 import { SliderSection } from '../components/SliderSection';
 import '../components/CarouselProducts.css';
 
+import p2 from '../assets/products/2.jpeg';
+import p5 from '../assets/products/5.jpeg';
+import p6 from '../assets/products/6.jpeg';
+import p7 from '../assets/products/7.jpeg';
+import p8 from '../assets/products/8.jpeg';
+import p9 from '../assets/products/9.jpeg';
+import p11 from '../assets/products/11.jpeg';
+import p13 from '../assets/products/13.jpeg';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const productData = [
   // SEATING
-  { id: 1, title: 'Urbane Leather Sofa', category: 'Seating', img: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80' },
-  { id: 2, title: 'Mid-Century Armchair', category: 'Seating', img: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=1200' },
-  { id: 3, title: 'Rattan Lounge Chair', category: 'Seating', img: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?w=1200' },
-  { id: 4, title: 'Midnight Velvet Chair', category: 'Seating', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200' },
-  { id: 5, title: 'Hand-Knotted Stool', category: 'Seating', img: 'https://images.unsplash.com/photo-1503602642458-232111445657?w=1200' },
+  { id: 23, title: 'Premium Seating Collection I', category: 'Seating', img: p8 },
+  { id: 27, title: 'Premium Seating Collection II', category: 'Seating', img: p13 },
+  { id: 24, title: 'Premium Seating Collection V', category: 'Seating', img: p5 },
+  { id: 25, title: 'Premium Seating Collection VII', category: 'Seating', img: p7 },
+  { id: 26, title: 'Premium Seating Collection IX', category: 'Seating', img: p9 },
+
 
   // TABLES
-  { id: 6, title: 'Live Edge Walnut Table', category: 'Tables', img: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1200' },
-  { id: 7, title: 'Circular Marble Table', category: 'Tables', img: 'https://images.unsplash.com/photo-1577145716161-042861c8a164?w=1200' },
-  { id: 8, title: 'Brutalist Coffee Table', category: 'Tables', img: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=1200' },
-  { id: 9, title: 'Ash Writing Desk', category: 'Tables', img: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=1200' },
+  { id: 6, title: 'Live Edge Walnut Table', category: 'Tables', img: p2 },
+  { id: 7, title: 'Circular Marble Table', category: 'Tables', img: p5 },
+  { id: 8, title: 'Brutalist Coffee Table', category: 'Tables', img: p6 },
+  { id: 9, title: 'Ash Writing Desk', category: 'Tables', img: p11 },
   { id: 10, title: 'Mango Wood Dining Set', category: 'Tables', img: 'https://images.unsplash.com/photo-1604578762246-41134e37f9cc?w=1200' },
 
   // STORAGE

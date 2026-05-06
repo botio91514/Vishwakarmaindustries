@@ -41,8 +41,9 @@ export const Footer: React.FC = () => {
               <p>H-1/256, ITI Area,<br />Jodhpur, RJ 342001</p>
             </div>
             <div className="footer-social-minimal">
-              <a href="#" className="interactive magnetic">Instagram</a>
-              <a href="#" className="interactive magnetic">LinkedIn</a>
+              <a href="https://www.instagram.com/vishwakarmaindustries/" target="_blank" rel="noopener noreferrer" className="interactive magnetic">Instagram</a>
+              <a href="https://in.pinterest.com/vishindustries/" target="_blank" rel="noopener noreferrer" className="interactive magnetic">Pinterest</a>
+              <a href="https://www.linkedin.com/company/vishindustries" target="_blank" rel="noopener noreferrer" className="interactive magnetic">LinkedIn</a>
             </div>
           </div>
 
