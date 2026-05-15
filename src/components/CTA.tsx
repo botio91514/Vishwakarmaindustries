@@ -41,7 +41,7 @@ export const CTA: React.FC = () => {
               <p className="cta-solid-desc">
                 From bespoke retail collections to large-scale hotel outfitting, discover the precision of Jodhpur manufacturing.
               </p>
-              <a href="mailto:inquiry@vishwakarma.com" className="cta-solid-btn interactive magnetic">
+              <a href="mailto:info@thevishwakarmaindustries.com" className="cta-solid-btn interactive magnetic">
                 Initiate Inquiry <ArrowRight size={18} />
               </a>
             </div>
@@ -52,7 +52,7 @@ export const CTA: React.FC = () => {
                 <div className="cta-c-icon"><Phone size={20} /></div>
                 <div className="cta-c-info">
                   <span className="cta-c-label">Direct Export Line</span>
-                  <a href="tel:+912912345678" className="cta-c-value">+91 (291) 234-5678</a>
+                  <a href="tel:+919166631034" className="cta-c-value">+91-9166631034</a>
                 </div>
               </div>
 
@@ -60,7 +60,7 @@ export const CTA: React.FC = () => {
                 <div className="cta-c-icon"><Mail size={20} /></div>
                 <div className="cta-c-info">
                   <span className="cta-c-label">Email Division</span>
-                  <a href="mailto:inquiry@vishwakarma.com" className="cta-c-value">inquiry@vishwakarma.com</a>
+                  <a href="mailto:info@thevishwakarmaindustries.com" className="cta-c-value">info@thevishwakarmaindustries.com</a>
                 </div>
               </div>
 
@@ -68,7 +68,7 @@ export const CTA: React.FC = () => {
                 <div className="cta-c-icon"><MapPin size={20} /></div>
                 <div className="cta-c-info">
                   <span className="cta-c-label">Manufacturing Unit</span>
-                  <span className="cta-c-value">H-1/256, ITI Area,<br/>Jodhpur, India</span>
+                  <span className="cta-c-value">Unit-1: H-355, Sangaria RIICO 2nd Phase<br/>Unit 2: Plot No. 18, Sanagaria<br/>Jodhpur, India</span>
                 </div>
               </div>
             </div>

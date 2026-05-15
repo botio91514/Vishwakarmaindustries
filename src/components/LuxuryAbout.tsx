@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 import './LuxuryAbout.css';
-import vrikshLogo from '../assets/Vriksh.png';
+import vrikshLogo from '../assets/Vriksh.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -148,7 +148,7 @@ export const LuxuryAbout: React.FC = () => {
             <div className="la-stats">
               <div className="la-stat">
                 <div className="la-stat-header">
-                  <span className="la-stat-num" data-target="40">0</span>
+                  <span className="la-stat-num" data-target="30">0</span>
                   <span className="la-stat-plus">+</span>
                 </div>
                 <span className="la-stat-label">Years Experience</span>
@@ -162,14 +162,14 @@ export const LuxuryAbout: React.FC = () => {
               </div>
               <div className="la-stat">
                 <div className="la-stat-header">
-                  <span className="la-stat-num" data-target="50">0</span>
+                  <span className="la-stat-num" data-target="15">0</span>
                   <span className="la-stat-plus">+</span>
                 </div>
                 <span className="la-stat-label">Global Markets</span>
               </div>
               <div className="la-stat">
                 <div className="la-stat-header">
-                  <span className="la-stat-num" data-target="10000">0</span>
+                  <span className="la-stat-num" data-target="5000">0</span>
                   <span className="la-stat-plus">+</span>
                 </div>
                 <span className="la-stat-label">Pieces Crafted</span>

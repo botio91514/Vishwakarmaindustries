@@ -1,5 +1,4 @@
 /* Premium Carousel Products CSS */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
   --p-white: #ffffff;
@@ -285,59 +284,6 @@
 
 .product-card:hover .product-image-wrap img {
   transform: scale(1.1);
-}
-
-/* Overlay */
-.product-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 60%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  opacity: 0;
-  transition: var(--p-transition);
-  pointer-events: none;
-}
-
-.product-card:hover .product-overlay {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.overlay-btn {
-  width: 160px;
-  padding: 0.8rem;
-  border: none;
-  background: var(--p-white);
-  color: var(--p-text-main);
-  font-family: 'Outfit', sans-serif;
-  font-weight: 600;
-  font-size: 0.85rem;
-  border-radius: 50px;
-  cursor: pointer;
-  transform: translateY(20px);
-  transition: var(--p-transition);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.overlay-btn.primary {
-  background: var(--p-text-main);
-  color: var(--p-white);
-}
-
-.product-card:hover .overlay-btn {
-  transform: translateY(0);
-}
-
-.overlay-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Card Info */

@@ -229,7 +229,15 @@ body::after {
   backdrop-filter: blur(20px) saturate(180%);
   padding: 1rem 3rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  /* Clean architectural line */
+}
+
+@media (max-width: 768px) {
+  .navbar-luxe {
+    padding: 1.5rem 1.5rem;
+  }
+  .navbar-luxe.scrolled {
+    padding: 1rem 1.5rem;
+  }
 }
 
 .navbar-luxe.nav-hidden {
@@ -794,7 +802,7 @@ body::after {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 10vw, 10rem);
+  font-size: clamp(1.8rem, 10vw, 10rem);
   font-weight: 400;
   line-height: 0.9;
   letter-spacing: -0.02em;
@@ -1832,21 +1840,26 @@ body::after {
 
   /* Hero Typography - Fix Wrapping */
   .hero-title { 
-    font-size: clamp(2.2rem, 10vw, 4rem); 
-    line-height: 0.95;
-    letter-spacing: -0.01em;
-    white-space: nowrap;
+    font-size: clamp(2.2rem, 11vw, 3.4rem); 
+    line-height: 1;
+    letter-spacing: -0.02em;
+    white-space: normal;
+    word-break: normal;
   }
   
   .hero-title .line {
     display: block;
     width: 100%;
+    overflow: visible !important;
   }
 
   .hero-title .line-inner {
     display: block;
     text-align: center;
+    white-space: nowrap;
   }
+  
+
   
   .hero-subtitle {
      font-size: 0.9rem;
@@ -1878,22 +1891,31 @@ body::after {
     padding: 1rem 0;
   }
   .menu-text {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    line-height: 1.2;
+  }
+  .menu-bottom {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  .bottom-line {
+    display: none;
   }
   .menu-close {
     top: 1.5rem;
     right: 1.5rem;
   }
 
-  /* Journey/Timeline Adjustments */
-  .journey-row { 
-    flex-direction: column !important; 
-    margin-bottom: 6rem; 
+  .footer-bottom {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    padding: 2rem 1.5rem;
   }
-  .journey-meta { 
-    position: static !important; 
-    transform: none !important; 
-    margin-bottom: 1.5rem; 
+  .footer-social {
+    justify-content: center;
   }
 }
 

@@ -12,7 +12,7 @@ export const Navbar = () => {
     const navItems = [
         { path: '/', label: 'Home', number: '01' },
         { path: '/products', label: 'Collections', number: '02' },
-        { path: '/about', label: 'Atelier', number: '03' },
+        { path: '/about', label: 'About Us', number: '03' },
         { path: '/contact', label: 'Contact', number: '04' },
     ];
 
@@ -132,8 +132,8 @@ export const Navbar = () => {
                     <div className="menu-right">
                         <div className="menu-info">
                             <span className="info-label">Get in Touch</span>
-                            <a href="mailto:hello@vishwakarma.com" className="info-link interactive">hello@vishwakarma.com</a>
-                            <a href="tel:+15551234567" className="info-link interactive">+1 (555) 123-4567</a>
+                            <a href="mailto:info@thevishwakarmaindustries.com" className="info-link interactive" style={{ fontSize: '0.9em' }}>info@thevishwakarmaindustries.com</a>
+                            <a href="tel:+919166631034" className="info-link interactive">+91-9166631034</a>
                         </div>
                         <div className="menu-social">
                             <span className="info-label">Follow Us</span>
@@ -148,9 +148,9 @@ export const Navbar = () => {
 
                 {/* Bottom Bar */}
                 <div className="menu-bottom">
-                    <span className="bottom-text">Est. 1985</span>
+                    <span className="bottom-text">Est. 1996</span>
                     <span className="bottom-line" />
-                    <span className="bottom-text">Luxury Furniture</span>
+                    <span className="bottom-text">Modern Furniture</span>
                 </div>
             </div>
         </>

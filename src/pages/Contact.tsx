@@ -71,6 +71,48 @@ export default function Contact() {
     ));
   };
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        form.reset();
+      } else {
+        // For development with placeholder URL, we show success
+        if (form.action.includes('your-id-here')) {
+          setIsSubmitted(true);
+        } else {
+          alert("Submission failed. Please try again or contact us via email.");
+        }
+      }
+    } catch (error) {
+      if (form.action.includes('your-id-here')) {
+        setIsSubmitted(true);
+      } else {
+        alert("An error occurred. Please try again later.");
+      }
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setIsSubmitted(false), 8000);
+    }
+  };
+
   return (
     <div ref={containerRef} className="contact-page">
       <div className="noise-overlay" />
@@ -82,8 +124,8 @@ export default function Contact() {
         <section className="contact-hero-luxe">
           <div className="hero-visual-wrapper">
             <img 
-              src="/luxury_hero.png" 
-              alt="Luxury Furniture" 
+              src="/luxury_hero.webp" 
+              alt="Luxury Interior" 
               className="hero-img-luxe" 
             />
             <div className="hero-visual-overlay" />
@@ -126,69 +168,88 @@ export default function Contact() {
             <div className="form-blueprint-wrapper">
               <div className="form-header-luxe">
                 <h2 className="form-title-luxe">Project Brief</h2>
-                <div className="form-meta">EST. 1985 / JODHPUR_HQ</div>
+                <div className="form-meta">EST. 1996 / JODHPUR_HQ</div>
               </div>
 
-              <form className="luxe-form" onSubmit={(e) => e.preventDefault()}>
-                <div className="luxe-form-grid">
-                  <div className="luxe-field interactive">
-                    <label>Full Name</label>
-                    <input 
-                      type="text" 
-                      placeholder="YOUR NAME" 
-                      required 
-                      onFocus={() => setActiveStep(0)}
-                    />
-                    <div className="field-border" />
-                  </div>
-                  <div className="luxe-field interactive">
-                    <label>Email Address</label>
-                    <input 
-                      type="email" 
-                      placeholder="EMAIL@ADDRESS.COM" 
-                      required 
-                      onFocus={() => setActiveStep(0)}
-                    />
-                    <div className="field-border" />
-                  </div>
-                  <div className="luxe-field full interactive">
-                    <label>Inquiry Type</label>
-                    <select 
-                      defaultValue="" 
-                      required 
-                      onFocus={() => setActiveStep(1)}
+              {isSubmitted ? (
+                <div className="success-message-luxe">
+                  <h3 className="success-title">Collaboration Initialized</h3>
+                  <p className="success-desc">Our design team has received your brief. We will reach out shortly to discuss the architectural details.</p>
+                </div>
+              ) : (
+                  <form 
+                    className="luxe-form" 
+                    onSubmit={handleSubmit}
+                    action="https://formspree.io/f/xjglqzqa" 
+                    method="POST"
+                  >
+                    <div className="luxe-form-grid">
+                      <div className="luxe-field interactive">
+                        <label>Full Name</label>
+                        <input 
+                          name="full_name"
+                          type="text" 
+                          placeholder="YOUR NAME" 
+                          required 
+                          onFocus={() => setActiveStep(0)}
+                        />
+                        <div className="field-border" />
+                      </div>
+                      <div className="luxe-field interactive">
+                        <label>Email Address</label>
+                        <input 
+                          name="email"
+                          type="email" 
+                          placeholder="EMAIL@ADDRESS.COM" 
+                          required 
+                          onFocus={() => setActiveStep(0)}
+                        />
+                        <div className="field-border" />
+                      </div>
+                      <div className="luxe-field full interactive">
+                        <label>Inquiry Type</label>
+                        <select 
+                          name="inquiry_type"
+                          defaultValue="" 
+                          required 
+                          onFocus={() => setActiveStep(1)}
+                        >
+                          <option value="" disabled hidden>SELECT PROJECT TYPE</option>
+                          <option value="architectural">Architectural Partnership</option>
+                          <option value="commercial">Commercial / Hospitality</option>
+                          <option value="residential">Residential Commission</option>
+                          <option value="other">General Inquiry</option>
+                        </select>
+                        <div className="field-border" />
+                      </div>
+                    </div>
+
+                    <div className="luxe-field full interactive">
+                      <label>Message / Brief</label>
+                      <textarea 
+                        name="message"
+                        placeholder="DESCRIBE YOUR VISION OR REQUIREMENTS..." 
+                        required 
+                        onFocus={() => setActiveStep(1)}
+                        style={{ height: '120px' }}
+                      />
+                      <div className="field-border" />
+                    </div>
+
+                  <div className="luxe-form-footer">
+                    <div className="form-agreement">
+                      By submitting, you agree to our privacy protocols regarding project data.
+                    </div>
+                    <button 
+                      className="luxe-submit-btn interactive magnetic" 
+                      disabled={isSubmitting}
                     >
-                      <option value="" disabled hidden>SELECT PROJECT TYPE</option>
-                      <option value="architectural">Architectural Partnership</option>
-                      <option value="commercial">Commercial / Hospitality</option>
-                      <option value="residential">Residential Commission</option>
-                      <option value="other">General Inquiry</option>
-                    </select>
-                    <div className="field-border" />
+                      <span>{isSubmitting ? 'Transmitting Brief...' : 'Initialize Collaboration'}</span>
+                      <ArrowRight size={20} />
+                    </button>
                   </div>
-                </div>
-
-                <div className="luxe-field full interactive">
-                  <label>Message / Brief</label>
-                  <textarea 
-                    placeholder="DESCRIBE YOUR VISION OR REQUIREMENTS..." 
-                    required 
-                    onFocus={() => setActiveStep(1)}
-                    style={{ height: '120px' }}
-                  />
-                  <div className="field-border" />
-                </div>
-
-                <div className="luxe-form-footer">
-                  <div className="form-agreement">
-                    By submitting, you agree to our privacy protocols regarding project data.
-                  </div>
-                  <button className="luxe-submit-btn interactive magnetic">
-                    <span>Initialize Collaboration</span>
-                    <ArrowRight size={20} />
-                  </button>
-                </div>
-              </form>
+                </form>
+              )}
             </div>
           </div>
         </section>
@@ -205,8 +266,9 @@ export default function Contact() {
               <div className="hub-card-label">Main Atelier & Export Hub</div>
               <h3 className="hub-card-title">Jodhpur, India</h3>
               <p className="hub-card-text">
-                H-1/256, ITI Industrial Area,<br />
-                Jodhpur, Rajasthan 342001
+                Unit-1: H-355, Sangaria RIICO 2nd Phase<br />
+                Unit 2: Plot No. 18, Sanagaria<br />
+                Jodhpur, Rajasthan 342013
               </p>
               <div className="hub-card-cta">
                 <Globe size={16} />
@@ -218,14 +280,14 @@ export default function Contact() {
               <div className="hub-card-label">Direct Communication</div>
               <div className="info-group">
                 <span className="info-label">Global Inquiries</span>
-                <a href="mailto:export@vkindustries.com" className="info-value clickable-luxe">
-                  export@vkindustries.com
+                <a href="mailto:info@thevishwakarmaindustries.com" className="info-value clickable-luxe">
+                  info@thevishwakarmaindustries.com
                 </a>
               </div>
               <div className="info-group">
                 <span className="info-label">Principal Office</span>
-                <a href="tel:+912912741234" className="info-value clickable-luxe">
-                  +91 (291) 274 1234
+                <a href="tel:+919166631034" className="info-value clickable-luxe">
+                  +91-9166631034
                 </a>
               </div>
             </div>

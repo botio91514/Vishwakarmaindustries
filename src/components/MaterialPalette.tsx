@@ -2,9 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './MaterialPalette.css';
-import seeshamImg from '../assets/seesham1.jpg';
-import ironImg from '../assets/iron.jpg';
-import mangoImg from '../assets/mangowood.jpg';
+import seeshamImg from '../assets/seesham1.webp';
+import ironImg from '../assets/iron.webp';
+import mangoImg from '../assets/mangowood.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

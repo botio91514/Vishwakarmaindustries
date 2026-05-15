@@ -2,10 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './ManufacturingExcellence.css';
-import woodImg from '../assets/woodfab.jpg';
-import ironImg from '../assets/iron.jpg';
-import expoImg from '../assets/export.jpg';
-import bespokeImg from '../assets/oemodm.jpg';
+import woodImg from '../assets/woodfab.webp';
+import ironImg from '../assets/iron.webp';
+import expoImg from '../assets/export.webp';
+import bespokeImg from '../assets/oemodm.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,7 +35,7 @@ const capabilities = [
     id: "04",
     title: "Bespoke OEM/ODM",
     tagline: "Custom Large-Scale Projects",
-    desc: "From boutique hotels to global retail chains, we provide comprehensive OEM/ODM solutions, translating complex design blueprints into physical reality with engineering precision.",
+    desc: "We offer custom OEM/ODM solutions for hotels and retail chains, bringing your furniture designs to life with precision.",
     img: bespokeImg
   }
 ];

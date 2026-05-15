@@ -71,8 +71,8 @@ export default function Idea() {
           </div>
         </section>
 
-        <section className="concepts-grid" style={{ padding: '10vh 8%', background: 'var(--bg-secondary)' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '6rem' }}>
+        <section className="concepts-grid">
+          <div className="idea-grid">
             <div className="concept-card">
               <span className="about-eyebrow">01 / GEOMETRY</span>
               <h3 className="ph-title">Structural <br/><em>Honesty</em></h3>

@@ -37,8 +37,8 @@ export const Footer: React.FC = () => {
           <div className="footer-col-export">
             <span className="footer-label">Global Access</span>
             <div className="footer-contact-links">
-              <a href="mailto:export@vishwakarma.com" className="interactive">export@vishwakarma.com</a>
-              <p>H-1/256, ITI Area,<br />Jodhpur, RJ 342001</p>
+              <a href="mailto:info@thevishwakarmaindustries.com" className="interactive">info@thevishwakarmaindustries.com</a>
+              <p>Unit-1: H-355, Sangaria RIICO 2nd Phase<br />Unit 2: Plot No. 18, Sanagaria<br />Jodhpur, RJ 342013</p>
             </div>
             <div className="footer-social-minimal">
               <a href="https://www.instagram.com/vishwakarmaindustries/" target="_blank" rel="noopener noreferrer" className="interactive magnetic">Instagram</a>
@@ -54,8 +54,8 @@ export const Footer: React.FC = () => {
           <div className="footer-legal-left">
             &copy; {new Date().getFullYear()} Vishwakarma Industries.
             <div className="legal-links">
-              <a href="#privacy" className="interactive">Privacy</a>
-              <a href="#terms" className="interactive">Terms</a>
+              <a href="/privacy" className="interactive">Privacy</a>
+              <a href="/terms" className="interactive">Terms</a>
             </div>
           </div>
 

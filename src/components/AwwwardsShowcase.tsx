@@ -45,15 +45,16 @@ export const AwwwardsShowcase: React.FC = () => {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 769px)", () => {
       const wrapper = wrapperRef.current;
       const section = sectionRef.current;
       if (!wrapper || !section) return;
 
-      // Calculate total scroll distance
       const totalWidth = wrapper.scrollWidth - window.innerWidth;
 
-      // 1. HORIZONTAL SCROLL PINNING & PROGRESS BAR
+      // Horizontal scroll pinning
       gsap.to(wrapper, {
         x: -totalWidth,
         ease: 'none',
@@ -66,7 +67,7 @@ export const AwwwardsShowcase: React.FC = () => {
         }
       });
 
-      // Progress Bar Animation
+      // Progress bar
       gsap.to('.awwwards-progress-fill', {
         scaleX: 1,
         ease: 'none',
@@ -78,13 +79,10 @@ export const AwwwardsShowcase: React.FC = () => {
         }
       });
 
-      // 2. VELOCITY SKEW & PARALLAX EFFECT ON CARDS
+      // Parallax on images
       cardsRef.current.forEach((card) => {
         if (!card) return;
         const image = card.querySelector('.awwwards-image');
-        const title = card.querySelector('.awwwards-title');
-
-        // Image Parallax (Counter-scroll)
         gsap.to(image, {
           x: '20%',
           ease: 'none',
@@ -96,23 +94,7 @@ export const AwwwardsShowcase: React.FC = () => {
           }
         });
 
-        // Intro Reveal for Titles using SplitType
-        const splitTitle = new SplitType(title as HTMLElement, { types: 'chars' });
-        gsap.fromTo(splitTitle.chars,
-          { y: 100, opacity: 0, rotateX: -90 },
-          {
-            y: 0, opacity: 1, rotateX: 0,
-            duration: 1.2,
-            stagger: 0.05,
-            ease: "power4.out",
-            scrollTrigger: {
-              trigger: section,
-              start: "top center",
-            }
-          }
-        );
-
-        // Velocity Skew Tracker
+        // Velocity skew
         ScrollTrigger.create({
           trigger: section,
           start: 'top top',
@@ -121,7 +103,6 @@ export const AwwwardsShowcase: React.FC = () => {
             const velocity = self.getVelocity();
             const skewAmount = gsap.utils.clamp(-15, 15, velocity / -100);
             const scaleAmount = gsap.utils.clamp(0.9, 1, 1 - Math.abs(velocity / 5000));
-            
             gsap.to(card, {
               skewX: skewAmount,
               scale: scaleAmount,
@@ -133,16 +114,49 @@ export const AwwwardsShowcase: React.FC = () => {
         });
       });
 
-      // Reset skew when scrolling stops
       ScrollTrigger.addEventListener("scrollEnd", () => {
         gsap.to('.awwwards-card', { skewX: 0, scale: 1, duration: 0.8, ease: "elastic.out(1, 0.3)" });
       });
+    });
 
-    }, sectionRef);
+    mm.add("(max-width: 768px)", () => {
+      // Mobile animations (simple fade-in)
+      cardsRef.current.forEach((card) => {
+        if (!card) return;
+        gsap.from(card, {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+          }
+        });
+      });
+    });
 
-    return () => {
-      ctx.revert();
-    };
+    // Shared animations (Titles)
+    cardsRef.current.forEach((card) => {
+      if (!card) return;
+      const title = card.querySelector('.awwwards-title');
+      const splitTitle = new SplitType(title as HTMLElement, { types: 'chars' });
+      gsap.fromTo(splitTitle.chars,
+        { y: 50, opacity: 0, rotateX: -90 },
+        {
+          y: 0, opacity: 1, rotateX: 0,
+          duration: 1,
+          stagger: 0.02,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+          }
+        }
+      );
+    });
+
+    return () => mm.revert();
   }, []);
 
   // Spotlight Effect

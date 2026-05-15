@@ -12,7 +12,7 @@ const mosaicItems = [
     category: 'Executive',
     image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80',
     speed: 0.1,
-    year: '1985'
+    year: '1996'
   },
   {
     id: 2,

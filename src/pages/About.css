@@ -65,11 +65,10 @@
 
 .about-title {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 7.5vw, 7.5rem);
-  line-height: 0.85;
+  font-size: clamp(2.5rem, 8vw, 7.5rem);
+  line-height: 0.9;
   font-weight: 300;
   margin-bottom: 3.5rem;
-  overflow: hidden;
   letter-spacing: -0.02em;
   width: 100%;
   display: block;
@@ -160,7 +159,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12rem;
+  gap: 6rem;
   align-items: center;
 }
 
@@ -532,9 +531,10 @@
 
 @media (max-width: 480px) {
   .about-title {
-    font-size: 2.2rem;
-    line-height: 1;
+    font-size: clamp(2rem, 10vw, 2.8rem);
+    line-height: 1.1;
     letter-spacing: -0.01em;
+    word-break: break-word;
   }
   .about-hero-media {
     height: 40vh;
@@ -547,5 +547,28 @@
   }
   .idea-card {
     padding: 2.5rem 1.25rem;
+  }
+}
+
+/* ── IDEA PAGE EXTRAS ────────────────────────── */
+.concepts-grid {
+  padding: 10vh 8%;
+  background: var(--bg-secondary);
+}
+
+.idea-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6rem;
+}
+
+@media (max-width: 768px) {
+  .idea-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem;
+  }
+  
+  .idea-grid .concept-card {
+    margin-top: 0 !important;
   }
 }

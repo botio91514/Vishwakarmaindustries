@@ -7,54 +7,152 @@ import { Footer } from '../components/Footer';
 import { SliderSection } from '../components/SliderSection';
 import '../components/CarouselProducts.css';
 
-import p2 from '../assets/products/2.jpeg';
-import p5 from '../assets/products/5.jpeg';
-import p6 from '../assets/products/6.jpeg';
-import p7 from '../assets/products/7.jpeg';
-import p8 from '../assets/products/8.jpeg';
-import p9 from '../assets/products/9.jpeg';
-import p11 from '../assets/products/11.jpeg';
-import p13 from '../assets/products/13.jpeg';
+import bed1 from '../assets/products/products/Bed1.webp';
+import bed2 from '../assets/products/products/Bed2.webp';
+import bed3 from '../assets/products/products/Bed3.webp';
+import bed4 from '../assets/products/products/Bed4.webp';
+import bed5 from '../assets/products/products/Bed5.webp';
+import bed6 from '../assets/products/products/Bed6.webp';
+import bed7 from '../assets/products/products/Bed7.webp';
+import bed8 from '../assets/products/products/Bed8.webp';
+import bed9 from '../assets/products/products/Bed9.webp';
+import bed10 from '../assets/products/products/Bed10.webp';
+
+import cab1 from '../assets/products/products/Cab1.webp';
+import cab2 from '../assets/products/products/Cab2.webp';
+import cab3 from '../assets/products/products/Cab3.webp';
+import cab4 from '../assets/products/products/Cab4.webp';
+import cab5 from '../assets/products/products/Cab5.webp';
+import cab6 from '../assets/products/products/Cab6.webp';
+import cab7 from '../assets/products/products/Cab7.webp';
+import cab8 from '../assets/products/products/Cab8.webp';
+import cab9 from '../assets/products/products/Cab9.webp';
+import cab10 from '../assets/products/products/Cab10.webp';
+
+import chair1 from '../assets/products/products/Chair1.webp';
+import chair2 from '../assets/products/products/Chair2.webp';
+import chair3 from '../assets/products/products/Chair3.webp';
+import chair4 from '../assets/products/products/Chair4.webp';
+
+import sml1 from '../assets/products/products/Sml1.webp';
+import sml2 from '../assets/products/products/Sml2.webp';
+import sml3 from '../assets/products/products/Sml3.webp';
+import sml4 from '../assets/products/products/Sml4.webp';
+import sml5 from '../assets/products/products/Sml5.webp';
+import sml6 from '../assets/products/products/Sml6.webp';
+import sml7 from '../assets/products/products/Sml7.webp';
+import sml8 from '../assets/products/products/Sml8.webp';
+import sml9 from '../assets/products/products/Sml9.webp';
+import sml10 from '../assets/products/products/Sml10.webp';
+import sml11 from '../assets/products/products/Sml11.webp';
+
+import tab1 from '../assets/products/products/Tab1.webp';
+import tab2 from '../assets/products/products/Tab2.webp';
+import tab3 from '../assets/products/products/Tab3.webp';
+import tab4 from '../assets/products/products/Tab4.webp';
+import tab5 from '../assets/products/products/Tab5.webp';
+import tab6 from '../assets/products/products/Tab6.webp';
+import tab7 from '../assets/products/products/Tab7.webp';
+import tab8 from '../assets/products/products/Tab8.webp';
+import tab9 from '../assets/products/products/Tab9.webp';
+
+import table1 from '../assets/products/products/Table1.webp';
+import table2 from '../assets/products/products/Table2.webp';
+import table3 from '../assets/products/products/Table3.webp';
+import table4 from '../assets/products/products/Table4.webp';
+
+import tipoi1 from '../assets/products/products/Tipoi1.webp';
+import tipoi2 from '../assets/products/products/Tipoi2.webp';
+import tipoi3 from '../assets/products/products/Tipoi3.webp';
+import tipoi4 from '../assets/products/products/Tipoi4.webp';
+import tipoi5 from '../assets/products/products/Tipoi5.webp';
+import tipoi6 from '../assets/products/products/Tipoi6.webp';
+import tipoi7 from '../assets/products/products/Tipoi7.webp';
+import tipoi8 from '../assets/products/products/Tipoi8.webp';
+
+import xyz1 from '../assets/products/products/Xyz1.webp';
+import xyz2 from '../assets/products/products/Xyz2.webp';
+import xyz3 from '../assets/products/products/Xyz3.webp';
+import xyz4 from '../assets/products/products/Xyz4.webp';
+import xyz5 from '../assets/products/products/Xyz5.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const productData = [
   // SEATING
-  { id: 23, title: 'Premium Seating Collection I', category: 'Seating', img: p8 },
-  { id: 27, title: 'Premium Seating Collection II', category: 'Seating', img: p13 },
-  { id: 24, title: 'Premium Seating Collection V', category: 'Seating', img: p5 },
-  { id: 25, title: 'Premium Seating Collection VII', category: 'Seating', img: p7 },
-  { id: 26, title: 'Premium Seating Collection IX', category: 'Seating', img: p9 },
-
+  { id: 1, title: 'Ergonomic Lounge Chair', category: 'Seating', img: chair1 },  { id: 2, title: 'Modern Minimalist Stool', category: 'Seating', img: chair2 },
+  { id: 3, title: 'Premium Velvet Armchair', category: 'Seating', img: chair3 },
+  { id: 4, title: 'Classic Nordic Seat', category: 'Seating', img: chair4 },
 
   // TABLES
-  { id: 6, title: 'Live Edge Walnut Table', category: 'Tables', img: p2 },
-  { id: 7, title: 'Circular Marble Table', category: 'Tables', img: p5 },
-  { id: 8, title: 'Brutalist Coffee Table', category: 'Tables', img: p6 },
-  { id: 9, title: 'Ash Writing Desk', category: 'Tables', img: p11 },
-  { id: 10, title: 'Mango Wood Dining Set', category: 'Tables', img: 'https://images.unsplash.com/photo-1604578762246-41134e37f9cc?w=1200' },
+  { id: 5, title: 'Executive Oak Desk', category: 'Tables', img: tab1 },
+  { id: 6, title: 'Walnut Coffee Table', category: 'Tables', img: tab2 },
+  { id: 7, title: 'Glass Top Side Table', category: 'Tables', img: tab3 },
+  { id: 8, title: 'Reclaimed Wood Dining Table', category: 'Tables', img: tab4 },
+  { id: 9, title: 'Industrial Metal Table', category: 'Tables', img: tab5 },
+  { id: 10, title: 'Art Deco Console', category: 'Tables', img: tab6 },
+  { id: 11, title: 'Marble Pedestal Table', category: 'Tables', img: tab7 },
+  { id: 12, title: 'Minimalist Bistro Table', category: 'Tables', img: tab8 },
+  { id: 13, title: 'Contemporary Work Station', category: 'Tables', img: tab9 },
+  { id: 14, title: 'Grand Banquet Table', category: 'Tables', img: table1 },
+  { id: 15, title: 'Oval Conference Table', category: 'Tables', img: table2 },
+  { id: 16, title: 'Rustic Breakfast Table', category: 'Tables', img: table3 },
+  { id: 17, title: 'Slim Entryway Table', category: 'Tables', img: table4 },
+  { id: 18, title: 'Handcrafted Tipoi I', category: 'Tables', img: tipoi1 },
+  { id: 19, title: 'Handcrafted Tipoi II', category: 'Tables', img: tipoi2 },
+  { id: 20, title: 'Handcrafted Tipoi III', category: 'Tables', img: tipoi3 },
+  { id: 21, title: 'Handcrafted Tipoi IV', category: 'Tables', img: tipoi4 },
+  { id: 22, title: 'Handcrafted Tipoi V', category: 'Tables', img: tipoi5 },
+  { id: 23, title: 'Handcrafted Tipoi VI', category: 'Tables', img: tipoi6 },
+  { id: 24, title: 'Handcrafted Tipoi VII', category: 'Tables', img: tipoi7 },
+  { id: 25, title: 'Handcrafted Tipoi VIII', category: 'Tables', img: tipoi8 },
 
   // STORAGE
-  { id: 11, title: 'Chevron Sideboard', category: 'Storage', img: 'https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?w=1200' },
-  { id: 12, title: 'Brass Inlay Credenza', category: 'Storage', img: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1200' },
-  { id: 13, title: 'Industrial Storage', category: 'Storage', img: 'https://images.unsplash.com/photo-1599696848652-f0ff23bc911f?w=1200' },
-  { id: 14, title: 'Sun-Bleached Wardrobe', category: 'Storage', img: 'https://images.unsplash.com/photo-1544457070-4cd773b4d71e?w=1200' },
-  { id: 15, title: 'Floating Oak Bookshelf', category: 'Storage', img: 'https://images.unsplash.com/photo-1616486701797-0f33f61038ec?w=1200' },
+  { id: 26, title: 'Modernist Sideboard', category: 'Storage', img: cab1 },
+  { id: 27, title: 'Brushed Oak Credenza', category: 'Storage', img: cab2 },
+  { id: 28, title: 'Industrial Utility Cabinet', category: 'Storage', img: cab3 },
+  { id: 29, title: 'Glass Front Display Case', category: 'Storage', img: cab4 },
+  { id: 30, title: 'Minimalist Wardrobe', category: 'Storage', img: cab5 },
+  { id: 31, title: 'Tallboy Chest of Drawers', category: 'Storage', img: cab6 },
+  { id: 32, title: 'Low-Profile TV Unit', category: 'Storage', img: cab7 },
+  { id: 33, title: 'Modular Bookshelf System', category: 'Storage', img: cab8 },
+  { id: 34, title: 'Aesthetic Pantry Storage', category: 'Storage', img: cab9 },
+  { id: 35, title: 'Compact Nightstand', category: 'Storage', img: cab10 },
+
+  // BEDS
+  { id: 36, title: 'Royal Master Bed', category: 'Beds', img: bed1 },
+  { id: 37, title: 'Contemporary Platform Bed', category: 'Beds', img: bed2 },
+  { id: 38, title: 'Upholstered King Frame', category: 'Beds', img: bed3 },
+  { id: 39, title: 'Minimalist Queen Base', category: 'Beds', img: bed4 },
+  { id: 40, title: 'Artisan Carved Headboard', category: 'Beds', img: bed5 },
+  { id: 41, title: 'Luxury Suite Bed', category: 'Beds', img: bed6 },
+  { id: 42, title: 'Sleek Modern Bedframe', category: 'Beds', img: bed7 },
+  { id: 43, title: 'Traditional Wood Bed', category: 'Beds', img: bed8 },
+  { id: 44, title: 'Compact Guest Bed', category: 'Beds', img: bed9 },
+  { id: 45, title: 'Premium Comfort Base', category: 'Beds', img: bed10 },
 
   // BESPOKE
-  { id: 16, title: 'Boutique Hotel Console', category: 'Bespoke', img: 'https://images.unsplash.com/photo-1505635330303-d3f8479ad395?w=1200' },
-  { id: 17, title: 'Carved Royal Bed', category: 'Bespoke', img: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?w=1200' },
-  { id: 18, title: 'Monolithic Stone Plinth', category: 'Bespoke', img: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200' },
-  { id: 19, title: 'Velvet Headboard', category: 'Bespoke', img: 'https://images.unsplash.com/photo-1551298698-66b830a3f11c?w=1200' },
+  { id: 46, title: 'Custom Accent Piece I', category: 'Bespoke', img: sml1 },
+  { id: 47, title: 'Custom Accent Piece II', category: 'Bespoke', img: sml2 },
+  { id: 48, title: 'Custom Accent Piece III', category: 'Bespoke', img: sml3 },
+  { id: 49, title: 'Custom Accent Piece IV', category: 'Bespoke', img: sml4 },
+  { id: 50, title: 'Custom Accent Piece V', category: 'Bespoke', img: sml5 },
+  { id: 51, title: 'Custom Accent Piece VI', category: 'Bespoke', img: sml6 },
+  { id: 52, title: 'Custom Accent Piece VII', category: 'Bespoke', img: sml7 },
+  { id: 53, title: 'Custom Accent Piece VIII', category: 'Bespoke', img: sml8 },
+  { id: 54, title: 'Custom Accent Piece IX', category: 'Bespoke', img: sml9 },
+  { id: 55, title: 'Custom Accent Piece X', category: 'Bespoke', img: sml10 },
+  { id: 56, title: 'Custom Accent Piece XI', category: 'Bespoke', img: sml11 },
 
   // IRONWORK
-  { id: 20, title: 'Forged Iron Base', category: 'Ironwork', img: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1200' },
-  { id: 21, title: 'Hammered Copper Sink', category: 'Ironwork', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200' },
-  { id: 22, title: 'Sculptural Planter', category: 'Ironwork', img: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=1200' },
-  { id: 23, title: 'Brass Chandelier', category: 'Ironwork', img: 'https://images.unsplash.com/photo-1542728928-1413eeae4d92?w=1200' }
+  { id: 57, title: 'Forged Iron Sculpture I', category: 'Ironwork', img: xyz1 },
+  { id: 58, title: 'Forged Iron Sculpture II', category: 'Ironwork', img: xyz2 },
+  { id: 59, title: 'Forged Iron Sculpture III', category: 'Ironwork', img: xyz3 },
+  { id: 60, title: 'Forged Iron Sculpture IV', category: 'Ironwork', img: xyz4 },
+  { id: 61, title: 'Forged Iron Sculpture V', category: 'Ironwork', img: xyz5 },
 ];
 
-const categories = ['All', 'Sofas', 'Chairs', 'Tables', 'Beds', 'Storage', 'Bespoke'];
+const categories = ['All', 'Seating', 'Tables', 'Beds', 'Storage', 'Bespoke', 'Ironwork'];
 
 export default function Products() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -78,6 +176,7 @@ export default function Products() {
   const chairs = productData.filter(p => p.category === 'Seating');
   const tables = productData.filter(p => p.category === 'Tables');
   const storage = productData.filter(p => p.category === 'Storage');
+  const beds = productData.filter(p => p.category === 'Beds');
   const bespoke = productData.filter(p => p.category === 'Bespoke');
   const ironwork = productData.filter(p => p.category === 'Ironwork');
 
@@ -96,7 +195,7 @@ export default function Products() {
 
       <div className="sticky-filter-bar" style={{ transform: 'translateY(-100%)', opacity: 0 }}>
         <div className="filter-group">
-          {categories.slice(0, 5).map(cat => (
+          {categories.map(cat => (
             <span
               key={cat}
               className={`filter-item ${activeFilter === cat ? 'active' : ''}`}
@@ -114,11 +213,24 @@ export default function Products() {
       </div>
 
       <main>
-        <SliderSection title="Signature Seating" products={chairs} />
-        <SliderSection title="Handcrafted Tables" products={tables} />
-        <SliderSection title="Elegant Storage" products={storage} />
-        <SliderSection title="Bespoke Collection" products={bespoke} />
-        <SliderSection title="Artisan Ironwork" products={ironwork} />
+        {(activeFilter === 'All' || activeFilter === 'Seating') && chairs.length > 0 && (
+          <SliderSection title="Signature Seating" products={chairs} />
+        )}
+        {(activeFilter === 'All' || activeFilter === 'Tables') && tables.length > 0 && (
+          <SliderSection title="Handcrafted Tables" products={tables} />
+        )}
+        {(activeFilter === 'All' || activeFilter === 'Storage') && storage.length > 0 && (
+          <SliderSection title="Elegant Storage" products={storage} />
+        )}
+        {(activeFilter === 'All' || activeFilter === 'Beds') && beds.length > 0 && (
+          <SliderSection title="Luxury Beds" products={beds} />
+        )}
+        {(activeFilter === 'All' || activeFilter === 'Bespoke') && bespoke.length > 0 && (
+          <SliderSection title="Bespoke Collection" products={bespoke} />
+        )}
+        {(activeFilter === 'All' || activeFilter === 'Ironwork') && ironwork.length > 0 && (
+          <SliderSection title="Artisan Ironwork" products={ironwork} />
+        )}
       </main>
 
       <Footer />

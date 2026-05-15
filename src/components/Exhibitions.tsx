@@ -4,13 +4,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Exhibitions.css';
 
 // Import images
-import fair1 from '../assets/Delhi Fair1.jpeg';
-import fair2 from '../assets/delhifair2.jpeg';
-import fair3 from '../assets/Expo.jpeg';
-import fair4 from '../assets/e1.jpeg';
-import fair5 from '../assets/e2.jpeg';
-import fair6 from '../assets/e3.jpeg';
-import fair7 from '../assets/e4.jpeg';
+import fair1 from '../assets/Delhi Fair1.webp';
+import fair2 from '../assets/delhifair2.webp';
+import fair3 from '../assets/Expo.webp';
+import fair4 from '../assets/e1.webp';
+import fair5 from '../assets/e2.webp';
+import fair6 from '../assets/e3.webp';
+import fair7 from '../assets/e4.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -228,7 +228,7 @@ export const Exhibitions: React.FC = () => {
 
           <div className="ex-member-item">
             <div className="ex-member-logo-wrap">
-              <img src={new URL('../assets/Vriksh.png', import.meta.url).href} alt="Vriksh Certification" />
+              <img src={new URL('../assets/Vriksh.webp', import.meta.url).href} alt="Vriksh Certification" />
             </div>
             <div className="ex-member-text">
               <h4 className="ex-member-h">Vriksh Certified</h4>

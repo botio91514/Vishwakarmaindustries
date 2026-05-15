@@ -161,7 +161,7 @@ export default function About() {
           </div>
           <div className="about-hero-content">
             <span className="about-eyebrow">— OUR STORY —</span>
-            <h1 className="about-title">{splitText('A 25-Year Legacy of Craft')}</h1>
+            <h1 className="about-title">{splitText('A 30-Year Legacy of Craft')}</h1>
             <p className="about-description">
               Vishwakarma Industries (Jodhpur, Rajasthan) is a convergence of ancestral craft and modern dominance. We don't just export furniture; we curate heritage.
             </p>
@@ -177,7 +177,7 @@ export default function About() {
               <h2 className="visionary-name">Mr. MalaRam Suthar</h2>
               <p className="visionary-quote">“Allow your passion to become your purpose and it will one day become your profession.”</p>
               <div className="visionary-text">
-                <p>Establishing Vishwakarma Industries 25 years ago, Mr. MalaRam Suthar's story is one of relentless passion. Coming from a traditional Suthar (Carpenter) family, he was captivated by furniture-making techniques from a young age.</p>
+                <p>Establishing Vishwakarma Industries 30 years ago, Mr. MalaRam Suthar's story is one of relentless passion. Coming from a traditional Suthar (Carpenter) family, he was captivated by furniture-making techniques from a young age.</p>
                 <p>After honing his skills for over 10 years in the Jodhpur handicrafts industry, he founded his own manufacturing company. Today, his vision continues to drive our growth, providing best-in-class furniture to the global market.</p>
               </div>
             </div>
@@ -298,9 +298,9 @@ export default function About() {
                 <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80" alt="Crafting" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="journey-content" style={{ direction: 'ltr' }}>
-                <span className="journey-year">25 Yrs</span>
+                <span className="journey-year">30 Yrs</span>
                 <h3 className="ph-title">The First Workshop</h3>
-                <p className="journey-text">Two and a half decades ago, MalaRam Suthar translated personal passion into professional excellence, founding Vishwakarma Industries.</p>
+                <p className="journey-text">Three decades ago, MalaRam Suthar translated personal passion into professional excellence, founding Vishwakarma Industries.</p>
               </div>
             </div>
 
@@ -325,7 +325,7 @@ export default function About() {
                 <path id="badgePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
                 <text fontSize="8.5" letterSpacing="2">
                   <textPath xlinkHref="#badgePath" startOffset="0%">
-                    VRIKSH CERTIFIED • AUTHENTIC JODHPUR • 25 YEARS • VRIKSH CERTIFIED •
+                    VRIKSH CERTIFIED • AUTHENTIC JODHPUR • 30 YEARS • VRIKSH CERTIFIED •
                   </textPath>
                 </text>
               </svg>

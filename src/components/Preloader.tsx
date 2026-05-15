@@ -4,6 +4,9 @@ import { gsap } from 'gsap';
 export const Preloader = ({ onComplete }: { onComplete?: () => void }) => {
     const [progress, setProgress] = useState(0);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [showPreloader] = useState(() => {
+        return !sessionStorage.getItem('vkw_preloader_done');
+    });
 
     useEffect(() => {
         const images = document.querySelectorAll('img');
@@ -39,7 +42,7 @@ export const Preloader = ({ onComplete }: { onComplete?: () => void }) => {
                 }
             });
         }
-    }, []);
+    }, [showPreloader]);
 
     const hasFinished = useRef(false);
 
@@ -66,12 +69,21 @@ export const Preloader = ({ onComplete }: { onComplete?: () => void }) => {
                    );
                 },
                 onComplete: () => {
+                    sessionStorage.setItem('vkw_preloader_done', 'true');
                     if (onComplete) onComplete();
                 }
             })
             .set('.preloader-wrapper', { display: 'none' });
         }
-    }, [isLoaded, onComplete]);
+    }, [isLoaded, onComplete, showPreloader]);
+
+    useEffect(() => {
+        if (!showPreloader) {
+            if (onComplete) onComplete();
+        }
+    }, [showPreloader, onComplete]);
+
+    if (!showPreloader) return null;
 
     return (
         <div className="preloader-wrapper">

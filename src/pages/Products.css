@@ -1,5 +1,5 @@
 /* ============================================================
-   B2B EXPORT CATALOG — Advanced Editorial Luxury
+   B2B EXPORT CATALOG - Advanced Editorial Luxury
 ============================================================ */
 
 .catalog-master-page {
@@ -89,6 +89,14 @@
 .catalog-filter-tabs {
   display: flex;
   gap: 3.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.catalog-filter-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .catalog-tab-link {
@@ -97,6 +105,7 @@
   padding: 0;
   cursor: none;
   position: relative;
+  flex-shrink: 0;
 }
 
 .tab-label {
@@ -109,7 +118,7 @@
 }
 
 .catalog-tab-link::after {
-  content: ';
+  content: '';
   position: absolute;
   bottom: -2.6rem;
   left: 0;
@@ -327,6 +336,18 @@
 }
 
 @media (max-width: 768px) {
+  .catalog-filter-tabs {
+    gap: 2rem;
+    padding: 0 1.5rem;
+    margin: 0 -1.5rem; /* Allow scroll to hit edges */
+  }
+  .catalog-nav-sticky {
+    margin-bottom: 4rem;
+    padding: 1.5rem 0;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
   .creative-layout {
     grid-template-columns: 1fr;
     gap: 5rem;
@@ -334,13 +355,7 @@
   .catalog-item.wide {
     grid-column: span 1;
   }
-  .catalog-nav-sticky {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: flex-start;
-  }
-  .catalog-filter-tabs {
-    flex-wrap: wrap;
-    gap: 2rem 3rem;
+  .catalog-hero-title {
+    font-size: clamp(3rem, 12vw, 5rem);
   }
 }
