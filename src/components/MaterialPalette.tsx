@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './MaterialPalette.css';
 import seeshamImg from '../assets/seesham1.webp';
-import ironImg from '../assets/iron.webp';
+import acaciaImg from '../assets/acacia.webp';
 import mangoImg from '../assets/mangowood.webp';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -17,11 +17,11 @@ const materials = [
     properties: ["High Density", "Deep Grain", "Vriksh Certified"]
   },
   {
-    name: "Hand-Forged Iron",
-    scientific: "Industrial Grade",
-    desc: "Every metal frame is fire-forged by our blacksmiths, combining raw industrial strength with a refined, artisanal finish.",
-    img: ironImg,
-    properties: ["Tensile Strength", "Rustic Patina", "Zero Corrosion"]
+    name: "Natural Acacia Wood",
+    scientific: "Acacia Nilotica",
+    desc: "Celebrated for its remarkable density and warm golden-brown sweeps, our Acacia wood offers exceptional durability and a highly contrasting grain that elevates any modern silhouette.",
+    img: acaciaImg,
+    properties: ["High Durability", "Rich Contrast", "Vriksh Certified"]
   },
   {
     name: "Natural Mango Wood",

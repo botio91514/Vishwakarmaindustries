@@ -3,52 +3,28 @@ import { gsap } from 'gsap';
 
 export const MagneticCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const dotRef = useRef<HTMLDivElement>(null);
-  const trailRefs = useRef<HTMLDivElement[]>([]);
   const mousePos = useRef({ x: 0, y: 0 });
   const cursorPos = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    // if (window.matchMedia('(pointer: coarse)').matches) return; // Support touch-capable hybrid laptops
-
     const cursor = cursorRef.current;
-    const dot = dotRef.current;
-    if (!cursor || !dot) return;
+    if (!cursor) return;
 
     // Movement listener
     const handleMouseMove = (e: MouseEvent) => {
       mousePos.current = { x: e.clientX, y: e.clientY };
     };
 
-    // Ticker loop
+    // Ticker loop with smooth lerp
     const onTick = () => {
-      cursorPos.current.x += (mousePos.current.x - cursorPos.current.x) * 0.15;
-      cursorPos.current.y += (mousePos.current.y - cursorPos.current.y) * 0.15;
+      cursorPos.current.x += (mousePos.current.x - cursorPos.current.x) * 0.2;
+      cursorPos.current.y += (mousePos.current.y - cursorPos.current.y) * 0.2;
 
       gsap.set(cursor, {
         x: cursorPos.current.x,
         y: cursorPos.current.y,
         xPercent: -50,
         yPercent: -50
-      });
-      gsap.set(dot, {
-        x: mousePos.current.x,
-        y: mousePos.current.y,
-        xPercent: -50,
-        yPercent: -50
-      });
-
-      trailRefs.current.forEach((trail, i) => {
-        if (trail) {
-          gsap.set(trail, {
-            x: cursorPos.current.x,
-            y: cursorPos.current.y,
-            xPercent: -50,
-            yPercent: -50,
-            opacity: 0.1,
-            scale: 0.8 - i * 0.1
-          });
-        }
       });
     };
 
@@ -95,25 +71,7 @@ export const MagneticCursor = () => {
     };
   }, []);
 
-  // Don't render on touch devices
-  // if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
-  //   return null;
-  // }
-
   return (
-    <>
-      <div ref={cursorRef} className="cursor" />
-      <div ref={dotRef} className="cursor-dot" />
-      {[...Array(3)].map((_, i) => (
-        <div
-          key={i}
-          ref={(el) => {
-            if (el) trailRefs.current[i] = el;
-          }}
-          className="cursor-trail"
-          style={{ opacity: 0.15, background: 'white' }}
-        />
-      ))}
-    </>
+    <div ref={cursorRef} className="cursor" />
   );
 };

@@ -25,13 +25,13 @@ export default function Contact() {
         duration: 1.5,
         ease: 'power4.out'
       })
-      .from('.hero-eyebrow-luxe, .hero-desc-luxe', {
-        y: 20,
-        opacity: 0,
-        stagger: 0.2,
-        duration: 1.2,
-        ease: 'power3.out'
-      }, '-=1');
+        .from('.hero-eyebrow-luxe, .hero-desc-luxe', {
+          y: 20,
+          opacity: 0,
+          stagger: 0.2,
+          duration: 1.2,
+          ease: 'power3.out'
+        }, '-=1');
 
       // 2. Blueprint Section Reveal
       gsap.from('.blueprint-step', {
@@ -77,7 +77,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     const form = e.currentTarget;
     const formData = new FormData(form);
 
@@ -123,14 +123,14 @@ export default function Contact() {
         {/* SECTION 1: CINEMATIC HERO */}
         <section className="contact-hero-luxe">
           <div className="hero-visual-wrapper">
-            <img 
-              src="/luxury_hero.webp" 
-              alt="Luxury Interior" 
-              className="hero-img-luxe" 
+            <img
+              src="/luxury_hero.webp"
+              alt="Luxury Interior"
+              className="hero-img-luxe"
             />
             <div className="hero-visual-overlay" />
           </div>
-          
+
           <div className="hero-text-luxe">
             <div className="hero-eyebrow-luxe">CONVERSATIONS — 01</div>
             <h1 className="hero-title-luxe">
@@ -168,7 +168,7 @@ export default function Contact() {
             <div className="form-blueprint-wrapper">
               <div className="form-header-luxe">
                 <h2 className="form-title-luxe">Project Brief</h2>
-                <div className="form-meta">EST. 1996 / JODHPUR_HQ</div>
+                <div className="form-meta">EST. 1995 / JODHPUR_HQ</div>
               </div>
 
               {isSubmitted ? (
@@ -177,71 +177,71 @@ export default function Contact() {
                   <p className="success-desc">Our design team has received your brief. We will reach out shortly to discuss the architectural details.</p>
                 </div>
               ) : (
-                  <form 
-                    className="luxe-form" 
-                    onSubmit={handleSubmit}
-                    action="https://formspree.io/f/xjglqzqa" 
-                    method="POST"
-                  >
-                    <div className="luxe-form-grid">
-                      <div className="luxe-field interactive">
-                        <label>Full Name</label>
-                        <input 
-                          name="full_name"
-                          type="text" 
-                          placeholder="YOUR NAME" 
-                          required 
-                          onFocus={() => setActiveStep(0)}
-                        />
-                        <div className="field-border" />
-                      </div>
-                      <div className="luxe-field interactive">
-                        <label>Email Address</label>
-                        <input 
-                          name="email"
-                          type="email" 
-                          placeholder="EMAIL@ADDRESS.COM" 
-                          required 
-                          onFocus={() => setActiveStep(0)}
-                        />
-                        <div className="field-border" />
-                      </div>
-                      <div className="luxe-field full interactive">
-                        <label>Inquiry Type</label>
-                        <select 
-                          name="inquiry_type"
-                          defaultValue="" 
-                          required 
-                          onFocus={() => setActiveStep(1)}
-                        >
-                          <option value="" disabled hidden>SELECT PROJECT TYPE</option>
-                          <option value="architectural">Architectural Partnership</option>
-                          <option value="commercial">Commercial / Hospitality</option>
-                          <option value="residential">Residential Commission</option>
-                          <option value="other">General Inquiry</option>
-                        </select>
-                        <div className="field-border" />
-                      </div>
-                    </div>
-
-                    <div className="luxe-field full interactive">
-                      <label>Message / Brief</label>
-                      <textarea 
-                        name="message"
-                        placeholder="DESCRIBE YOUR VISION OR REQUIREMENTS..." 
-                        required 
-                        onFocus={() => setActiveStep(1)}
-                        style={{ height: '120px' }}
+                <form
+                  className="luxe-form"
+                  onSubmit={handleSubmit}
+                  action="https://formspree.io/f/xjglqzqa"
+                  method="POST"
+                >
+                  <div className="luxe-form-grid">
+                    <div className="luxe-field interactive">
+                      <label>Full Name</label>
+                      <input
+                        name="full_name"
+                        type="text"
+                        placeholder="YOUR NAME"
+                        required
+                        onFocus={() => setActiveStep(0)}
                       />
                       <div className="field-border" />
                     </div>
+                    <div className="luxe-field interactive">
+                      <label>Email Address</label>
+                      <input
+                        name="email"
+                        type="email"
+                        placeholder="EMAIL@ADDRESS.COM"
+                        required
+                        onFocus={() => setActiveStep(0)}
+                      />
+                      <div className="field-border" />
+                    </div>
+                    <div className="luxe-field full interactive">
+                      <label>Inquiry Type</label>
+                      <select
+                        name="inquiry_type"
+                        defaultValue=""
+                        required
+                        onFocus={() => setActiveStep(1)}
+                      >
+                        <option value="" disabled hidden>SELECT PROJECT TYPE</option>
+                        <option value="architectural">Architectural Partnership</option>
+                        <option value="commercial">Commercial / Hospitality</option>
+                        <option value="residential">Residential Commission</option>
+                        <option value="other">General Inquiry</option>
+                      </select>
+                      <div className="field-border" />
+                    </div>
+                  </div>
+
+                  <div className="luxe-field full interactive">
+                    <label>Message / Brief</label>
+                    <textarea
+                      name="message"
+                      placeholder="DESCRIBE YOUR VISION OR REQUIREMENTS..."
+                      required
+                      onFocus={() => setActiveStep(1)}
+                      style={{ height: '120px' }}
+                    />
+                    <div className="field-border" />
+                  </div>
 
                   <div className="luxe-form-footer">
                     <div className="form-agreement">
                       By submitting, you agree to our privacy protocols regarding project data.
                     </div>
-                    <button 
-                      className="luxe-submit-btn interactive magnetic" 
+                    <button
+                      className="luxe-submit-btn interactive magnetic"
                       disabled={isSubmitting}
                     >
                       <span>{isSubmitting ? 'Transmitting Brief...' : 'Initialize Collaboration'}</span>

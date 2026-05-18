@@ -65,7 +65,7 @@
 
 .about-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 8vw, 7.5rem);
+  font-size: clamp(2.5rem, 6.5vw, 5.2rem);
   line-height: 0.9;
   font-weight: 300;
   margin-bottom: 3.5rem;

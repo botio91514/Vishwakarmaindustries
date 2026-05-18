@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './ManufacturingExcellence.css';
 import woodImg from '../assets/woodfab.webp';
-import ironImg from '../assets/iron.webp';
+import carvingImg from '../assets/woodcarving.webp';
 import expoImg from '../assets/export.webp';
 import bespokeImg from '../assets/oemodm.webp';
 
@@ -19,10 +19,10 @@ const capabilities = [
   },
   {
     id: "02",
-    title: "Iron Hand Forging",
-    tagline: "Ancestral Ironwork",
-    desc: "From industrial frameworks to delicate accents, every iron component is fire-forged by hand in Jodhpur, ensuring unmatched tensile strength and unique patina.",
-    img: ironImg
+    title: "Artisanal Hand-Carving",
+    tagline: "Generational Suthar Craft",
+    desc: "Guided by ancestral knowledge, our master carvers sculpt raw solid wood into exquisite bespoke relief work, blending heritage motifs with ultra-modern proportions.",
+    img: carvingImg
   },
   {
     id: "03",

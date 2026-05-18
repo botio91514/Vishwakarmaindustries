@@ -9,29 +9,29 @@ gsap.registerPlugin(ScrollTrigger);
 const columns: { img: string; title: string; category: string }[][] = [
   // Column 1
   [
-    { img: new URL('../assets/products/1.webp', import.meta.url).href, title: 'Precision Lathe', category: 'Machining' },
+    { img: new URL('../assets/products/1.webp', import.meta.url).href, title: 'Gracia Bedside Table', category: 'Bedroom' },
     { img: new URL('../assets/products/2.webp', import.meta.url).href, title: 'Industrial Mill', category: 'Heavy Duty' },
-    { img: new URL('../assets/products/3.webp', import.meta.url).href, title: 'CNC Center', category: 'Automation' },
+    { img: new URL('../assets/products/3.webp', import.meta.url).href, title: 'Sofia Acacia Coffee Table', category: 'Living' },
     { img: new URL('../assets/products/4.webp', import.meta.url).href, title: 'Forge Press', category: 'Metalwork' },
   ],
   // Column 2
   [
-    { img: new URL('../assets/products/5.webp', import.meta.url).href, title: 'Drilling Station', category: 'Precision' },
+    { img: new URL('../assets/products/5.webp', import.meta.url).href, title: 'Platina Dining Table', category: 'Dining' },
     { img: new URL('../assets/products/6.webp', import.meta.url).href, title: 'Hydraulic Unit', category: 'Power' },
     { img: new URL('../assets/products/7.webp', import.meta.url).href, title: 'Grinding Hub', category: 'Finishing' },
     { img: new URL('../assets/products/8.webp', import.meta.url).href, title: 'Surface Grinder', category: 'Tools' },
   ],
   // Column 3
   [
-    { img: new URL('../assets/products/9.webp', import.meta.url).href, title: 'Assembly Line', category: 'Production' },
+    { img: new URL('../assets/products/9.webp', import.meta.url).href, title: 'Sofia Coffee Table', category: 'Living' },
     { img: new URL('../assets/products/11.webp', import.meta.url).href, title: 'Welding Station', category: 'Fabrication' },
     { img: new URL('../assets/products/12.webp', import.meta.url).href, title: 'Cutting System', category: 'Heavy Duty' },
-    { img: new URL('../assets/products/13.webp', import.meta.url).href, title: 'Polishing Unit', category: 'Detailing' },
+    { img: new URL('../assets/products/13.webp', import.meta.url).href, title: 'Cannes Chair', category: 'COMFORT SEATING' },
   ],
   // Column 4
   [
-    { img: new URL('../assets/products/14.webp', import.meta.url).href, title: 'Quality Control', category: 'Standard' },
-    { img: new URL('../assets/products/15.webp', import.meta.url).href, title: 'Inventory Hub', category: 'Logistics' },
+    { img: new URL('../assets/products/14.webp', import.meta.url).href, title: 'Sofia Grey Coffee Table', category: 'Living' },
+    { img: new URL('../assets/products/15.webp', import.meta.url).href, title: 'Mosaic Bedside Table', category: 'Bedroom' },
     { img: new URL('../assets/products/16.webp', import.meta.url).href, title: 'Material Handling', category: 'Operations' },
     { img: new URL('../assets/products/1.webp', import.meta.url).href, title: 'Advanced Machining', category: 'Elite' },
   ],
@@ -140,7 +140,7 @@ export const ElasticGrid: React.FC = () => {
       {/* ── Header ── */}
       <div className="eg-header">
         <span className="eg-eyebrow">Masterpieces</span>
-        <h2 className="eg-title">The <em>Heritage</em> Collection</h2>
+        <h2 className="eg-title">Our <em>Latest</em> Collection</h2>
         <p className="eg-subtitle">
           Each piece, a convergence of artisan craft and timeless design.
           Built to outlast generations.

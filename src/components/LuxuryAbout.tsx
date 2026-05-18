@@ -123,7 +123,7 @@ export const LuxuryAbout: React.FC = () => {
             </div>
 
             <span className="la-label"></span>
-            <h2 className="la-title">Crafting <em>Legacy Since 1985</em></h2>
+            <h2 className="la-title">Crafting <em>Legacy Since 1995</em></h2>
 
             <div className="la-divider">
               <div className="la-divider-line" />

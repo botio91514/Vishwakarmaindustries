@@ -165,46 +165,25 @@ body::after {
 ================================ */
 .cursor {
   position: fixed;
-  width: 12px;
-  height: 12px;
-  background: white; /* Inverts color via difference mode */
+  width: 8px;
+  height: 8px;
+  background: white;
   border-radius: 50%;
   pointer-events: none;
   z-index: 2147483647;
   mix-blend-mode: difference;
-  border: none;
-  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  border: 1px solid transparent;
+  transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              height 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              background 0.35s ease,
+              border-color 0.35s ease;
 }
 
 .cursor.hover {
-  width: 65px;
-  height: 65px;
-  background: white;
-  mix-blend-mode: difference;
-  backdrop-filter: none;
-}
-
-.cursor-dot {
-  position: fixed;
-  width: 4px;
-  height: 4px;
-  background: var(--text-primary);
-  border: 1px solid white;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 2147483647;
-}
-
-.cursor-trail {
-  position: fixed;
-  width: 32px;
-  height: 32px;
-  background: white;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 2147483646;
-  mix-blend-mode: difference;
-  transition: transform 0.2s ease-out, opacity 0.3s ease;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border-color: white;
 }
 
 /* ================================
@@ -798,11 +777,13 @@ body::after {
   z-index: 10;
   text-align: center;
   padding: 0 2rem;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 10vw, 10rem);
+  font-size: clamp(2.2rem, 7.2vw, 6rem);
   font-weight: 400;
   line-height: 0.9;
   letter-spacing: -0.02em;
@@ -1820,7 +1801,7 @@ body::after {
   }
 
   /* Disable Custom Cursor on Touch */
-  .cursor, .cursor-dot, .cursor-trail { 
+  .cursor { 
     display: none !important; 
   }
   body { 

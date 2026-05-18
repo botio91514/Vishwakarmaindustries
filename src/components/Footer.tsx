@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
           {/* Column 1: Brand Authority */}
           <div className="footer-col-brand">
             <h2 className="footer-h2">Vishwakarma<br />Industries</h2>
-            <span className="footer-est-marker">EST. 2001 // JODHPUR HERITAGE</span>
+            <span className="footer-est-marker">EST. 1995 // JODHPUR HERITAGE</span>
             <p className="footer-certified">Vriksh Certified Manufacturing & Global Export.</p>
           </div>
 
@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
           <div className="footer-col-nav">
             <span className="footer-label">Navigation</span>
             <nav className="footer-nav-links">
-              <a href="/about" className="interactive">Heritage</a>
+              <a href="/about" className="interactive">About</a>
               <a href="/products" className="interactive">Collections</a>
               <a href="/infrastructure" className="interactive">Infrastructure</a>
               <a href="/contact" className="interactive">Consultation</a>

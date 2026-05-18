@@ -6,70 +6,70 @@ import './HeritageMosaic.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const mosaicItems = [
-  {
-    id: 1,
-    title: 'Obsidian Desk',
-    category: 'Executive',
-    image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80',
-    speed: 0.1,
-    year: '1996'
-  },
-  {
-    id: 2,
-    title: 'Aeon Lounge',
-    category: 'Comfort',
-    image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80',
-    speed: 0.35,
-    year: '2012'
-  },
-  {
-    id: 3,
-    title: 'Nova Dining',
-    category: 'Heritage',
-    image: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&q=80',
-    speed: 0.15,
-    year: '1998'
-  },
-  {
-    id: 4,
-    title: 'Zenith Unit',
-    category: 'Modern',
-    image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80',
-    speed: 0.45,
-    year: '2023'
-  },
-  {
-    id: 5,
-    title: 'Imperial Bed',
-    category: 'Rest',
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80',
-    speed: 0.2,
-    year: '2005'
-  },
-  {
-    id: 6,
-    title: 'Classic Bureau',
-    category: 'Legacy',
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80',
-    speed: 0.38,
-    year: '1992'
-  },
-  {
-    id: 7,
-    title: 'Handcrafted Detail',
-    category: 'Artisanal',
-    image: 'https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?w=600&q=80',
-    speed: 0.5,
-    year: 'Est.'
-  },
-  {
-    id: 8,
-    title: 'Texture & Grain',
-    category: 'Materials',
-    image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&q=80',
-    speed: 0.28,
-    year: 'Pure'
-  }
+    {
+        id: 1,
+        title: 'Obsidian Desk',
+        category: 'Executive',
+        image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80',
+        speed: 0.1,
+        year: '1995'
+    },
+    {
+        id: 2,
+        title: 'Aeon Lounge',
+        category: 'Comfort',
+        image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80',
+        speed: 0.35,
+        year: '2012'
+    },
+    {
+        id: 3,
+        title: 'Nova Dining',
+        category: 'Heritage',
+        image: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&q=80',
+        speed: 0.15,
+        year: '1998'
+    },
+    {
+        id: 4,
+        title: 'Zenith Unit',
+        category: 'Modern',
+        image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80',
+        speed: 0.45,
+        year: '2023'
+    },
+    {
+        id: 5,
+        title: 'Imperial Bed',
+        category: 'Rest',
+        image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80',
+        speed: 0.2,
+        year: '2005'
+    },
+    {
+        id: 6,
+        title: 'Classic Bureau',
+        category: 'Legacy',
+        image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80',
+        speed: 0.38,
+        year: '1992'
+    },
+    {
+        id: 7,
+        title: 'Handcrafted Detail',
+        category: 'Artisanal',
+        image: 'https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?w=600&q=80',
+        speed: 0.5,
+        year: 'Est.'
+    },
+    {
+        id: 8,
+        title: 'Texture & Grain',
+        category: 'Materials',
+        image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&q=80',
+        speed: 0.28,
+        year: 'Pure'
+    }
 ];
 
 export const HeritageMosaic: React.FC = () => {
@@ -81,7 +81,7 @@ export const HeritageMosaic: React.FC = () => {
             const items = gsap.utils.toArray<HTMLElement>('.hm-item');
             items.forEach((item) => {
                 const speed = parseFloat(item.getAttribute('data-speed') || '0.1');
-                gsap.fromTo(item, 
+                gsap.fromTo(item,
                     { y: 150 * speed },
                     {
                         y: -150 * speed,
@@ -150,7 +150,7 @@ export const HeritageMosaic: React.FC = () => {
             });
 
             // Item staggered reveal with CLIP reveal
-            gsap.fromTo('.hm-img-wrap', 
+            gsap.fromTo('.hm-img-wrap',
                 { clipPath: 'inset(100% 0 0 0)' },
                 {
                     clipPath: 'inset(0% 0 0 0)',
@@ -196,7 +196,7 @@ export const HeritageMosaic: React.FC = () => {
 
                 item.addEventListener('mousemove', handleMouseMove as any);
                 item.addEventListener('mouseleave', () => {
-                   gsap.to(img, { x: 0, y: 0, duration: 2, ease: 'power2.out' });
+                    gsap.to(img, { x: 0, y: 0, duration: 2, ease: 'power2.out' });
                 });
             });
 
@@ -209,7 +209,7 @@ export const HeritageMosaic: React.FC = () => {
         <section ref={containerRef} className="hm-section">
             <div className="hm-bg-text">CRAFTSMANSHIP</div>
             <div className="hm-bg-text-2">LEGACY</div>
-            
+
             <div className="hm-header">
                 <span className="ps-label">Masterpieces</span>
                 <h2 className="ps-title-main">The <em>Heritage</em> Mosaic</h2>
@@ -218,14 +218,14 @@ export const HeritageMosaic: React.FC = () => {
 
             <div className="hm-grid">
                 {mosaicItems.map((item) => (
-                    <div 
-                        key={item.id} 
-                        className={`hm-item hm-item-${item.id}`} 
+                    <div
+                        key={item.id}
+                        className={`hm-item hm-item-${item.id}`}
                         data-speed={item.speed}
                     >
                         <div className="hm-marker hm-marker-1">+</div>
                         <div className="hm-marker hm-marker-2">+</div>
-                        
+
                         <span className="hm-year">{item.year}</span>
                         <div className="hm-img-wrap">
                             <div className="hm-img-inner">

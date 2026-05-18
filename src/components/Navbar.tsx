@@ -148,7 +148,7 @@ export const Navbar = () => {
 
                 {/* Bottom Bar */}
                 <div className="menu-bottom">
-                    <span className="bottom-text">Est. 1996</span>
+                    <span className="bottom-text">Est. 1995</span>
                     <span className="bottom-line" />
                     <span className="bottom-text">Modern Furniture</span>
                 </div>

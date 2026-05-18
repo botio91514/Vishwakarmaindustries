@@ -61,7 +61,7 @@ export default function Idea() {
         <section className="about-hero" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
           <div className="about-hero-content" style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
             <span className="about-eyebrow">— THE STUDIO —</span>
-            <h1 className="idea-hero-title about-title" style={{ fontSize: 'clamp(3rem, 10vw, 12rem)' }}>
+            <h1 className="idea-hero-title about-title" style={{ fontSize: 'clamp(2.5rem, 7.5vw, 6.5rem)' }}>
               {splitText('PURE INTENT.')}
             </h1>
             <p className="idea-hero-sub about-description" style={{ maxWidth: '600px', margin: '0 auto' }}>
